@@ -1,0 +1,22 @@
+{
+  "name": "colourgrab",
+  "version": "1.0.0",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "dev": "cross-env NODE_ENV=development npx mix",
+    "prod": "cross-env NODE_ENV=production npx mix",
+    "watch": "cross-env NODE_ENV=development npx mix --watch"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "description": "",
+  "devDependencies": {
+    "cross-env": "^7.0.3",
+    "laravel-mix": "^6.0.49",
+    "resolve-url-loader": "^5.0.0",
+    "sass": "^1.69.5",
+    "sass-loader": "^12.6.0"
+  }
+}
