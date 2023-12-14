@@ -1,0 +1,5 @@
+@use '../util/' as util;
+
+body {
+    font-family: util.$font-family;
+}

@@ -8,15 +8,29 @@
     <title>Colour Grab</title>
 </head>
 <body class="{{ modifier }}">
-    <header>
-        Header
+    <header class="header">
+        <div class="container">
+            <div class="row">
+                <div class="col-12">
+                    <p>Header</p>
+                </div><!-- col -->
+            </div><!-- row -->
+        </div><!-- container -->
     </header>
+    
     <main>
         {% block content %}
         {% endblock %}
     </main>
-    <footer>
-        Footer
+
+    <footer class="footer">
+        <div class="container">
+            <div class="row">
+                <div class="col-12">
+                    Footer
+                </div><!-- col -->
+            </div><!-- row -->
+        </div><!-- container -->
     </footer>
 
     {% include 'scripts.html' %}

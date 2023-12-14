@@ -19,6 +19,7 @@
 ## Development
 
 ### Setup
+- set environment variables
 
 ### Build Frontend
-- npx run watch
+- npx mix watch
