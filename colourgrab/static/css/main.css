@@ -64,23 +64,65 @@ body {
 body.__blue .header-logo span {
   color: #0EA5E9;
 }
+body.__blue .header-logo:hover, body.__blue .header-logo:focus {
+  color: #0EA5E9;
+}
+body.__blue .nav ul li a::before {
+  background: #0EA5E9;
+}
 body.__green .header-logo span {
   color: #3CB35A;
+}
+body.__green .header-logo:hover, body.__green .header-logo:focus {
+  color: #3CB35A;
+}
+body.__green .nav ul li a::before {
+  background: #3CB35A;
 }
 body.__red .header-logo span {
   color: #EF4444;
 }
+body.__red .header-logo:hover, body.__red .header-logo:focus {
+  color: #EF4444;
+}
+body.__red .nav ul li a::before {
+  background: #EF4444;
+}
 body.__orange .header-logo span {
   color: #F29559;
+}
+body.__orange .header-logo:hover, body.__orange .header-logo:focus {
+  color: #F29559;
+}
+body.__orange .nav ul li a::before {
+  background: #F29559;
 }
 body.__purple .header-logo span {
   color: #8860EF;
 }
+body.__purple .header-logo:hover, body.__purple .header-logo:focus {
+  color: #8860EF;
+}
+body.__purple .nav ul li a::before {
+  background: #8860EF;
+}
 body.__pink .header-logo span {
   color: #F0D3F7;
 }
+body.__pink .header-logo:hover, body.__pink .header-logo:focus {
+  color: #F0D3F7;
+}
+body.__pink .nav ul li a::before {
+  background: #F0D3F7;
+}
 body.__yellow .header-logo span {
   color: #F6E35D;
+}
+body.__yellow .header-logo:hover, body.__yellow .header-logo:focus {
+  color: #F6E35D;
+}
+body.__yellow .nav ul li a::before {
+  background: #F6E35D;
 }
 
 h1, .h1,
@@ -125,12 +167,40 @@ h6, .h6 {
 a {
   color: #1E1E1E;
   text-decoration: none;
+  transition: all 0.3s;
 }
 
 .header {
   padding: 2.4rem 0;
   box-shadow: 0 -2px 16px 4px rgba(30, 30, 30, 0.1);
 }
+.nav {
+  height: 100%;
+}
+.nav ul {
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  height: 100%;
+}
+.nav ul li a {
+  position: relative;
+  font-weight: 500;
+}
+.nav ul li a:hover::before, .nav ul li a:focus::before {
+  width: 100%;
+}
+.nav ul li a::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  width: 0;
+  height: 2px;
+  background: #1E1E1E;
+  transition: all 0.3s;
+}
+
 /*!
  * Bootstrap Grid v5.3.2 (https://getbootstrap.com/)
  * Copyright 2011-2023 The Bootstrap Authors

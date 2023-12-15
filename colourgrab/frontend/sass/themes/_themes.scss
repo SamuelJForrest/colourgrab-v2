@@ -4,6 +4,23 @@
             span {
                 color: $color;
             }
+
+            &:hover,
+            &:focus {
+                color: $color;
+            }
+        }
+    }
+
+    .nav {
+        ul {
+            li {
+                a {
+                    &::before {
+                        background: $color;
+                    }
+                }
+            }
         }
     }
 }
