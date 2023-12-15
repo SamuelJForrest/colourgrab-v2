@@ -1,0 +1,9 @@
+@mixin setColorTheme($color) {
+    .header {
+        &-logo {
+            span {
+                color: $color;
+            }
+        }
+    }
+}

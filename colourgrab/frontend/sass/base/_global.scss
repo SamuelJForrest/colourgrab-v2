@@ -1,5 +1,83 @@
+@use '../themes/' as themes;
 @use '../util/' as util;
+
+html {
+    font-size: 62.5%;
+}
 
 body {
     font-family: util.$font-family;
+    font-size: 1.6rem;
+
+    &.__blue {
+        @include themes.setColorTheme(util.$color-blue);
+    }
+
+    &.__green {
+        @include themes.setColorTheme(util.$color-green);
+    }
+
+    &.__red {
+        @include themes.setColorTheme(util.$color-red);
+    }
+
+    &.__orange {
+        @include themes.setColorTheme(util.$color-orange);
+    }
+
+    &.__purple {
+        @include themes.setColorTheme(util.$color-purple);
+    }
+
+    &.__pink {
+        @include themes.setColorTheme(util.$color-pink);
+    }
+
+    &.__yellow {
+        @include themes.setColorTheme(util.$color-yellow);
+    }
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    font-weight: util.$font-bold;
+}
+
+h1 {
+    font-size: 4.8rem;
+}
+
+h2 {
+    font-size: 4rem;
+}
+
+h3 {
+    font-size: 3.2rem;
+}
+
+h4 {
+    font-size: 2.4rem;
+}
+
+h5 {
+    font-size: 2rem;
+}
+
+h6 {
+    font-size: 1.8rem;
+}
+
+@for $i from 1 through 6 {
+    .h#{$i} {
+        @extend h#{$i};
+    }
+}
+
+a {
+    color: util.$color-black;
+    text-decoration: none;
 }

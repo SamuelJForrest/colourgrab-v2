@@ -1,0 +1,11 @@
+@use '../base/global';
+@use '../util/' as util;
+
+.header {
+    padding: 2.4rem 0;
+    box-shadow: 0 -2px 16px 4px util.$color-black-10;
+
+    &-logo {
+        @extend .h3;
+    }
+}
