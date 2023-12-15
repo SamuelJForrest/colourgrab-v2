@@ -9,6 +9,7 @@ $font-black: 900;
 
 // colours
 $color-black: #1E1E1E;
+$color-black-80: rgba($color-black, 0.8);
 $color-black-10: rgba($color-black, 0.1);
 $color-grey-120: #A9B1C3;
 $color-grey: #F7F7F7;
@@ -34,3 +35,10 @@ $color-red-70: rgba($color-red, 0.7);
 
 $color-yellow: #F6E35D;
 $color-yellow-70: rgba($color-yellow, 0.7);
+
+// breakpoints
+$sm: 576px;
+$md: 768px;
+$lg: 992px;
+$xl: 1200px;
+$xxl: 1400px;

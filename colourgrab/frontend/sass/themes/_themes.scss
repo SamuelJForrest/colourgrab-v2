@@ -23,4 +23,15 @@
             }
         }
     }
+
+    .upload {
+        &-title {
+            @extend .h3;
+            margin-bottom: 1.2rem;
+
+            span {
+                color: $color;
+            }
+        }
+    }
 }

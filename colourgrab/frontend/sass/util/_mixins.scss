@@ -1,0 +1,9 @@
+@use './variables' as var;
+
+@mixin sectionPadding($yPadding: 8rem, $yPaddingMobile: 4rem) {
+    padding: $yPaddingMobile;
+
+    @media screen and (min-width: var.$lg) {
+        padding: $yPadding;
+    }
+}

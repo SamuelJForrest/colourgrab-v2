@@ -70,6 +70,12 @@ body.__blue .header-logo:hover, body.__blue .header-logo:focus {
 body.__blue .nav ul li a::before {
   background: #0EA5E9;
 }
+body.__blue .upload-title {
+  margin-bottom: 1.2rem;
+}
+body.__blue .upload-title span {
+  color: #0EA5E9;
+}
 body.__green .header-logo span {
   color: #3CB35A;
 }
@@ -78,6 +84,12 @@ body.__green .header-logo:hover, body.__green .header-logo:focus {
 }
 body.__green .nav ul li a::before {
   background: #3CB35A;
+}
+body.__green .upload-title {
+  margin-bottom: 1.2rem;
+}
+body.__green .upload-title span {
+  color: #3CB35A;
 }
 body.__red .header-logo span {
   color: #EF4444;
@@ -88,6 +100,12 @@ body.__red .header-logo:hover, body.__red .header-logo:focus {
 body.__red .nav ul li a::before {
   background: #EF4444;
 }
+body.__red .upload-title {
+  margin-bottom: 1.2rem;
+}
+body.__red .upload-title span {
+  color: #EF4444;
+}
 body.__orange .header-logo span {
   color: #F29559;
 }
@@ -96,6 +114,12 @@ body.__orange .header-logo:hover, body.__orange .header-logo:focus {
 }
 body.__orange .nav ul li a::before {
   background: #F29559;
+}
+body.__orange .upload-title {
+  margin-bottom: 1.2rem;
+}
+body.__orange .upload-title span {
+  color: #F29559;
 }
 body.__purple .header-logo span {
   color: #8860EF;
@@ -106,6 +130,12 @@ body.__purple .header-logo:hover, body.__purple .header-logo:focus {
 body.__purple .nav ul li a::before {
   background: #8860EF;
 }
+body.__purple .upload-title {
+  margin-bottom: 1.2rem;
+}
+body.__purple .upload-title span {
+  color: #8860EF;
+}
 body.__pink .header-logo span {
   color: #F0D3F7;
 }
@@ -114,6 +144,12 @@ body.__pink .header-logo:hover, body.__pink .header-logo:focus {
 }
 body.__pink .nav ul li a::before {
   background: #F0D3F7;
+}
+body.__pink .upload-title {
+  margin-bottom: 1.2rem;
+}
+body.__pink .upload-title span {
+  color: #F0D3F7;
 }
 body.__yellow .header-logo span {
   color: #F6E35D;
@@ -124,6 +160,12 @@ body.__yellow .header-logo:hover, body.__yellow .header-logo:focus {
 body.__yellow .nav ul li a::before {
   background: #F6E35D;
 }
+body.__yellow .upload-title {
+  margin-bottom: 1.2rem;
+}
+body.__yellow .upload-title span {
+  color: #F6E35D;
+}
 
 h1, .h1,
 h2,
@@ -131,6 +173,13 @@ h2,
 h3,
 .h3,
 .header-logo,
+body.__blue .upload-title,
+body.__green .upload-title,
+body.__red .upload-title,
+body.__orange .upload-title,
+body.__purple .upload-title,
+body.__pink .upload-title,
+body.__yellow .upload-title,
 h4,
 .h4,
 h5,
@@ -148,7 +197,7 @@ h2, .h2 {
   font-size: 4rem;
 }
 
-h3, .h3, .header-logo {
+h3, .h3, .header-logo, body.__blue .upload-title, body.__green .upload-title, body.__red .upload-title, body.__orange .upload-title, body.__purple .upload-title, body.__pink .upload-title, body.__yellow .upload-title {
   font-size: 3.2rem;
 }
 
@@ -168,6 +217,22 @@ a {
   color: #1E1E1E;
   text-decoration: none;
   transition: all 0.3s;
+}
+
+p {
+  line-height: 1.5;
+}
+
+.upload {
+  padding: 4rem;
+}
+@media screen and (min-width: 992px) {
+  .upload {
+    padding: 8rem;
+  }
+}
+.upload-text {
+  color: rgba(30, 30, 30, 0.8);
 }
 
 .header {
