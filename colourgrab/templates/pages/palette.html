@@ -1,0 +1,21 @@
+{% extends 'base.html' %}
+
+{% block content %}
+    <div class="palette">
+        <div class="container">
+            <div class="row">
+                {% if image_filename %}
+                    {% include 'components/palette.html' %}
+                {% else %}
+
+                {% if colors %}
+                    <p>woo</p>
+                {% endif %}
+                <div class="col-12">
+                    <p>No image uploaded yet.</p>
+                </div><!-- col -->
+                {% endif %}
+            </div><!-- row -->
+        </div><!-- container -->
+    </div>
+{% endblock %}

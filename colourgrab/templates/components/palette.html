@@ -1,0 +1,15 @@
+<div class="col-lg-6">
+    <div class="palette-image">
+        <!-- Generate the image URL using the filename -->
+        <img src="{{ url_for('static', filename='uploads/' + image_filename) }}" alt="Uploaded Image">
+    </div>
+</div><!-- col -->
+<div class="col-lg-6">
+    {% if color_list %}
+        <div class="palette-grid">
+            {% for color in color_list %}
+                <div class="palette-color" style="background-color: rgb({{color[0]}}, {{color[1]}}, {{color[2]}})"></div>
+            {% endfor %}
+        </div>
+    {% endif %}
+</div><!-- col -->

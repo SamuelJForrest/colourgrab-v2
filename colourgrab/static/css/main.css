@@ -356,6 +356,30 @@ p {
   transition: all 0.3s;
 }
 
+.palette {
+  padding: 6.4rem 0;
+}
+@media screen and (min-width: 992px) {
+  .palette {
+    padding: 8rem 0;
+  }
+}
+.palette-image img {
+  width: 100%;
+  border-radius: 0.8rem;
+}
+.palette-grid {
+  display: grid;
+  grid-template-columns: repeat(8, 1fr);
+  gap: 1.6rem;
+  padding: 0 2.4rem;
+}
+.palette-color {
+  border-radius: 0.8rem;
+  width: 100%;
+  aspect-ratio: 1;
+}
+
 .upload {
   padding: 6.4rem 0;
 }
