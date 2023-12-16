@@ -1,4 +1,4 @@
-@mixin setColorTheme($color) {
+@mixin setColorTheme($color, $colorTen, $colorSeventy) {
     .header {
         &-logo {
             span {
@@ -24,6 +24,15 @@
         }
     }
 
+    .button {
+        background: $color;
+
+        &:hover,
+        &:focus {
+            background: darken($color, 15%);
+        }
+    }
+
     .upload {
         &-title {
             @extend .h3;
@@ -32,6 +41,19 @@
             span {
                 color: $color;
             }
+        }
+
+        &-area {
+            box-shadow: inset 0 0 0 .5rem $color;
+            background: $colorTen;
+        }
+
+        &-icon {
+            color: $color;
+        }
+
+        &-label {
+            @extend .button;
         }
     }
 }

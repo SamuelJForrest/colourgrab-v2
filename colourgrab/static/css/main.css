@@ -70,10 +70,23 @@ body.__blue .header-logo:hover, body.__blue .header-logo:focus {
 body.__blue .nav ul li a::before {
   background: #0EA5E9;
 }
+body.__blue .button, body.__blue .upload-label {
+  background: #0EA5E9;
+}
+body.__blue .button:hover, body.__blue .upload-label:hover, body.__blue .button:focus, body.__blue .upload-label:focus {
+  background: #0a72a1;
+}
 body.__blue .upload-title {
   margin-bottom: 1.2rem;
 }
 body.__blue .upload-title span {
+  color: #0EA5E9;
+}
+body.__blue .upload-area {
+  box-shadow: inset 0 0 0 0.5rem #0EA5E9;
+  background: rgba(14, 165, 233, 0.1);
+}
+body.__blue .upload-icon {
   color: #0EA5E9;
 }
 body.__green .header-logo span {
@@ -85,10 +98,23 @@ body.__green .header-logo:hover, body.__green .header-logo:focus {
 body.__green .nav ul li a::before {
   background: #3CB35A;
 }
+body.__green .button, body.__green .upload-label {
+  background: #3CB35A;
+}
+body.__green .button:hover, body.__green .upload-label:hover, body.__green .button:focus, body.__green .upload-label:focus {
+  background: #297a3d;
+}
 body.__green .upload-title {
   margin-bottom: 1.2rem;
 }
 body.__green .upload-title span {
+  color: #3CB35A;
+}
+body.__green .upload-area {
+  box-shadow: inset 0 0 0 0.5rem #3CB35A;
+  background: rgba(60, 179, 90, 0.1);
+}
+body.__green .upload-icon {
   color: #3CB35A;
 }
 body.__red .header-logo span {
@@ -100,10 +126,23 @@ body.__red .header-logo:hover, body.__red .header-logo:focus {
 body.__red .nav ul li a::before {
   background: #EF4444;
 }
+body.__red .button, body.__red .upload-label {
+  background: #EF4444;
+}
+body.__red .button:hover, body.__red .upload-label:hover, body.__red .button:focus, body.__red .upload-label:focus {
+  background: #d41212;
+}
 body.__red .upload-title {
   margin-bottom: 1.2rem;
 }
 body.__red .upload-title span {
+  color: #EF4444;
+}
+body.__red .upload-area {
+  box-shadow: inset 0 0 0 0.5rem #EF4444;
+  background: rgba(239, 68, 68, 0.1);
+}
+body.__red .upload-icon {
   color: #EF4444;
 }
 body.__orange .header-logo span {
@@ -115,10 +154,23 @@ body.__orange .header-logo:hover, body.__orange .header-logo:focus {
 body.__orange .nav ul li a::before {
   background: #F29559;
 }
+body.__orange .button, body.__orange .upload-label {
+  background: #F29559;
+}
+body.__orange .button:hover, body.__orange .upload-label:hover, body.__orange .button:focus, body.__orange .upload-label:focus {
+  background: #ec6812;
+}
 body.__orange .upload-title {
   margin-bottom: 1.2rem;
 }
 body.__orange .upload-title span {
+  color: #F29559;
+}
+body.__orange .upload-area {
+  box-shadow: inset 0 0 0 0.5rem #F29559;
+  background: rgba(242, 149, 89, 0.1);
+}
+body.__orange .upload-icon {
   color: #F29559;
 }
 body.__purple .header-logo span {
@@ -130,10 +182,23 @@ body.__purple .header-logo:hover, body.__purple .header-logo:focus {
 body.__purple .nav ul li a::before {
   background: #8860EF;
 }
+body.__purple .button, body.__purple .upload-label {
+  background: #8860EF;
+}
+body.__purple .button:hover, body.__purple .upload-label:hover, body.__purple .button:focus, body.__purple .upload-label:focus {
+  background: #541ae8;
+}
 body.__purple .upload-title {
   margin-bottom: 1.2rem;
 }
 body.__purple .upload-title span {
+  color: #8860EF;
+}
+body.__purple .upload-area {
+  box-shadow: inset 0 0 0 0.5rem #8860EF;
+  background: rgba(136, 96, 239, 0.1);
+}
+body.__purple .upload-icon {
   color: #8860EF;
 }
 body.__pink .header-logo span {
@@ -145,10 +210,23 @@ body.__pink .header-logo:hover, body.__pink .header-logo:focus {
 body.__pink .nav ul li a::before {
   background: #F0D3F7;
 }
+body.__pink .button, body.__pink .upload-label {
+  background: #F0D3F7;
+}
+body.__pink .button:hover, body.__pink .upload-label:hover, body.__pink .button:focus, body.__pink .upload-label:focus {
+  background: #da92eb;
+}
 body.__pink .upload-title {
   margin-bottom: 1.2rem;
 }
 body.__pink .upload-title span {
+  color: #F0D3F7;
+}
+body.__pink .upload-area {
+  box-shadow: inset 0 0 0 0.5rem #F0D3F7;
+  background: rgba(240, 211, 247, 0.1);
+}
+body.__pink .upload-icon {
   color: #F0D3F7;
 }
 body.__yellow .header-logo span {
@@ -160,13 +238,25 @@ body.__yellow .header-logo:hover, body.__yellow .header-logo:focus {
 body.__yellow .nav ul li a::before {
   background: #F6E35D;
 }
+body.__yellow .button, body.__yellow .upload-label {
+  background: #F6E35D;
+}
+body.__yellow .button:hover, body.__yellow .upload-label:hover, body.__yellow .button:focus, body.__yellow .upload-label:focus {
+  background: #f2d615;
+}
 body.__yellow .upload-title {
   margin-bottom: 1.2rem;
 }
 body.__yellow .upload-title span {
   color: #F6E35D;
 }
-
+body.__yellow .upload-area {
+  box-shadow: inset 0 0 0 0.5rem #F6E35D;
+  background: rgba(239, 68, 68, 0.1);
+}
+body.__yellow .upload-icon {
+  color: #F6E35D;
+}
 h1, .h1,
 h2,
 .h2,
@@ -223,16 +313,16 @@ p {
   line-height: 1.5;
 }
 
-.upload {
-  padding: 4rem;
-}
-@media screen and (min-width: 992px) {
-  .upload {
-    padding: 8rem;
-  }
-}
-.upload-text {
-  color: rgba(30, 30, 30, 0.8);
+.button, .upload-label {
+  cursor: pointer;
+  position: relative;
+  display: inline-block;
+  padding: 1.2rem 3.2rem;
+  border-radius: 0.8rem;
+  color: #FCFCFC;
+  font-size: 2rem;
+  font-weight: 500;
+  transition: all 0.3s;
 }
 
 .header {
@@ -264,6 +354,46 @@ p {
   height: 2px;
   background: #1E1E1E;
   transition: all 0.3s;
+}
+
+.upload {
+  padding: 6.4rem 0;
+}
+@media screen and (min-width: 992px) {
+  .upload {
+    padding: 8rem 0;
+  }
+}
+.upload-text {
+  color: rgba(30, 30, 30, 0.8);
+}
+.upload-wrap, .upload-area {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: 100%;
+}
+.upload-area {
+  border-radius: 1.6rem;
+  padding: 6rem;
+  height: auto;
+}
+.upload-area p {
+  margin-bottom: 1.6rem;
+}
+.upload-icon {
+  font-size: 8rem;
+  margin-bottom: 2.4rem;
+}
+.upload-input {
+  pointer-events: none;
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  opacity: 0;
 }
 
 /*!

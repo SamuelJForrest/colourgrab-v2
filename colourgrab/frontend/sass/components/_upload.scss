@@ -1,9 +1,0 @@
-@use '../util';
-
-.upload {
-    @include util.sectionPadding();
-
-    &-text {
-        color: util.$color-black-80;
-    }
-}

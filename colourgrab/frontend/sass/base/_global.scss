@@ -1,5 +1,5 @@
-@use '../themes/' as themes;
-@use '../util/' as util;
+@use '../themes';
+@use '../util';
 
 html {
     font-size: 62.5%;
@@ -10,31 +10,59 @@ body {
     font-size: 1.6rem;
 
     &.__blue {
-        @include themes.setColorTheme(util.$color-blue);
+        @include themes.setColorTheme(
+            util.$color-blue,
+            util.$color-blue-10,
+            util.$color-blue-70
+        );
     }
 
     &.__green {
-        @include themes.setColorTheme(util.$color-green);
+        @include themes.setColorTheme(
+            util.$color-green,
+            util.$color-green-10,
+            util.$color-green-70
+        );
     }
 
     &.__red {
-        @include themes.setColorTheme(util.$color-red);
+        @include themes.setColorTheme(
+            util.$color-red,
+            util.$color-red-10,
+            util.$color-red-70);
+
     }
 
     &.__orange {
-        @include themes.setColorTheme(util.$color-orange);
+        @include themes.setColorTheme(
+            util.$color-orange,
+            util.$color-orange-10,
+            util.$color-orange-70
+        );
     }
 
     &.__purple {
-        @include themes.setColorTheme(util.$color-purple);
+        @include themes.setColorTheme(
+            util.$color-purple,
+            util.$color-purple-10,
+            util.$color-purple-70
+        );
     }
 
     &.__pink {
-        @include themes.setColorTheme(util.$color-pink);
+        @include themes.setColorTheme(
+            util.$color-pink,
+            util.$color-pink-10,
+            util.$color-pink-70
+        );
     }
 
     &.__yellow {
-        @include themes.setColorTheme(util.$color-yellow);
+        @include themes.setColorTheme(
+            util.$color-yellow,
+            util.$color-red-10,
+            util.$color-yellow-70
+        );
     }
 }
 

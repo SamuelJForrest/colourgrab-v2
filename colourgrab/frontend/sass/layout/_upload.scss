@@ -1,0 +1,48 @@
+@use '../util';
+@use '../components/button';
+
+.upload {
+    @include util.sectionPadding();
+
+    &-text {
+        color: util.$color-black-80;
+    }
+
+    &-wrap {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        height: 100%;
+    }
+
+    &-area {
+        @extend .upload-wrap;
+        border-radius: 1.6rem;
+        padding: 6rem;
+        height: auto;
+
+        p {
+            margin-bottom: 1.6rem;
+        }
+    }
+
+    &-icon {
+        font-size: 8rem;
+        margin-bottom: 2.4rem;
+    }
+
+    &-label {
+        @extend .button;
+    }
+
+    &-input {
+        pointer-events: none;
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        opacity: 0;
+    }
+}

@@ -1,9 +1,10 @@
+@use 'sass:math';
 @use './variables' as var;
 
-@mixin sectionPadding($yPadding: 8rem, $yPaddingMobile: 4rem) {
-    padding: $yPaddingMobile;
+@mixin sectionPadding($yPadding: 8rem) {
+    padding: math.div($yPadding, 1.25) 0;
 
     @media screen and (min-width: var.$lg) {
-        padding: $yPadding;
+        padding: $yPadding 0;
     }
 }
