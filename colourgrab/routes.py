@@ -6,8 +6,8 @@ from flask import Flask, render_template, request, redirect, url_for, session
 import colorgram as cg
 from werkzeug.utils import secure_filename
 
-COLOUR_MODIFIERS = ['__blue', '__green', '__red', '__orange', '__purple', '__pink', '__yellow']
-MODIFIER = random.choice(COLOUR_MODIFIERS)
+COLOUR_MODIFIERS = ['blue', 'green', 'red', 'orange', 'purple', 'pink', 'yellow']
+THEME = random.choice(COLOUR_MODIFIERS)
 
 UPLOAD_FOLDER = os.getenv('UPLOAD_FOLDER')
 app.config['UPLOAD_FOLDER'] = 'colourgrab/static/uploads'
@@ -31,7 +31,7 @@ def home():
 
         return redirect(url_for('palette'))
 
-    return render_template('pages/home.html', modifier=MODIFIER)
+    return render_template('pages/home.html', theme=THEME)
 
 @app.route('/palette')
 def palette():
@@ -54,7 +54,7 @@ def palette():
     # Pass the filename and image URL to the template
     return render_template(
         'pages/palette.html',
-        modifier=MODIFIER,
+        theme=THEME,
         image_filename=filename,
         image_url=image_url,
         colors=colors,

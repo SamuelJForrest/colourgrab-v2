@@ -2,6 +2,10 @@
 
 ## Design
 
+### Colour Themes
+- How the colour themes are determined
+- Updated Favicon colour
+
 ## Technologies
 
 ### Languages
