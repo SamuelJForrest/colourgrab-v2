@@ -10,7 +10,7 @@ COLOUR_MODIFIERS = ['blue', 'green', 'red', 'orange', 'purple', 'pink', 'yellow'
 THEME = random.choice(COLOUR_MODIFIERS)
 
 UPLOAD_FOLDER = os.getenv('UPLOAD_FOLDER')
-app.config['UPLOAD_FOLDER'] = 'colourgrab/static/uploads'
+app.config['UPLOAD_FOLDER'] = UPLOAD_FOLDER
 
 @app.route('/', methods=['GET', 'POST'])
 def home():
