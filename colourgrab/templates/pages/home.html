@@ -3,3 +3,13 @@
 {% block content %}
     {% include 'components/upload.html' %}
 {% endblock %}
+
+{% block scripts %}
+    <script>
+        const uploadForm = document.querySelector('#upload-form');
+
+        uploadForm.addEventListener('change', () => {
+            uploadForm.submit();
+        })
+    </script>
+{% endblock %}
