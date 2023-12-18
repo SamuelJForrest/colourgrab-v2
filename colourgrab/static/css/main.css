@@ -61,14 +61,20 @@ body {
   font-family: "Poppins", sans-serif;
   font-size: 1.6rem;
 }
-body.__blue .header-logo span {
+body.__blue .footer-title span, body.__blue .header-logo span {
   color: #0EA5E9;
 }
-body.__blue .header-logo:hover, body.__blue .header-logo:focus {
+body.__blue .footer-title:hover, body.__blue .header-logo:hover, body.__blue .footer-title:focus, body.__blue .header-logo:focus {
   color: #0EA5E9;
 }
 body.__blue .nav ul li a::before {
   background: #0EA5E9;
+}
+body.__blue .footer.__upper {
+  background: rgba(14, 165, 233, 0.1);
+}
+body.__blue .footer.__lower {
+  background: rgba(14, 165, 233, 0.7);
 }
 body.__blue .button, body.__blue .upload-label {
   background: #0EA5E9;
@@ -89,14 +95,20 @@ body.__blue .upload-area {
 body.__blue .upload-icon {
   color: #0EA5E9;
 }
-body.__green .header-logo span {
+body.__green .footer-title span, body.__green .header-logo span {
   color: #3CB35A;
 }
-body.__green .header-logo:hover, body.__green .header-logo:focus {
+body.__green .footer-title:hover, body.__green .header-logo:hover, body.__green .footer-title:focus, body.__green .header-logo:focus {
   color: #3CB35A;
 }
 body.__green .nav ul li a::before {
   background: #3CB35A;
+}
+body.__green .footer.__upper {
+  background: rgba(60, 179, 90, 0.1);
+}
+body.__green .footer.__lower {
+  background: rgba(60, 179, 90, 0.7);
 }
 body.__green .button, body.__green .upload-label {
   background: #3CB35A;
@@ -117,14 +129,20 @@ body.__green .upload-area {
 body.__green .upload-icon {
   color: #3CB35A;
 }
-body.__red .header-logo span {
+body.__red .footer-title span, body.__red .header-logo span {
   color: #EF4444;
 }
-body.__red .header-logo:hover, body.__red .header-logo:focus {
+body.__red .footer-title:hover, body.__red .header-logo:hover, body.__red .footer-title:focus, body.__red .header-logo:focus {
   color: #EF4444;
 }
 body.__red .nav ul li a::before {
   background: #EF4444;
+}
+body.__red .footer.__upper {
+  background: rgba(239, 68, 68, 0.1);
+}
+body.__red .footer.__lower {
+  background: rgba(239, 68, 68, 0.7);
 }
 body.__red .button, body.__red .upload-label {
   background: #EF4444;
@@ -145,14 +163,20 @@ body.__red .upload-area {
 body.__red .upload-icon {
   color: #EF4444;
 }
-body.__orange .header-logo span {
+body.__orange .footer-title span, body.__orange .header-logo span {
   color: #F29559;
 }
-body.__orange .header-logo:hover, body.__orange .header-logo:focus {
+body.__orange .footer-title:hover, body.__orange .header-logo:hover, body.__orange .footer-title:focus, body.__orange .header-logo:focus {
   color: #F29559;
 }
 body.__orange .nav ul li a::before {
   background: #F29559;
+}
+body.__orange .footer.__upper {
+  background: rgba(242, 149, 89, 0.1);
+}
+body.__orange .footer.__lower {
+  background: rgba(242, 149, 89, 0.7);
 }
 body.__orange .button, body.__orange .upload-label {
   background: #F29559;
@@ -173,14 +197,20 @@ body.__orange .upload-area {
 body.__orange .upload-icon {
   color: #F29559;
 }
-body.__purple .header-logo span {
+body.__purple .footer-title span, body.__purple .header-logo span {
   color: #8860EF;
 }
-body.__purple .header-logo:hover, body.__purple .header-logo:focus {
+body.__purple .footer-title:hover, body.__purple .header-logo:hover, body.__purple .footer-title:focus, body.__purple .header-logo:focus {
   color: #8860EF;
 }
 body.__purple .nav ul li a::before {
   background: #8860EF;
+}
+body.__purple .footer.__upper {
+  background: rgba(136, 96, 239, 0.1);
+}
+body.__purple .footer.__lower {
+  background: rgba(136, 96, 239, 0.7);
 }
 body.__purple .button, body.__purple .upload-label {
   background: #8860EF;
@@ -201,14 +231,20 @@ body.__purple .upload-area {
 body.__purple .upload-icon {
   color: #8860EF;
 }
-body.__pink .header-logo span {
+body.__pink .footer-title span, body.__pink .header-logo span {
   color: #F0D3F7;
 }
-body.__pink .header-logo:hover, body.__pink .header-logo:focus {
+body.__pink .footer-title:hover, body.__pink .header-logo:hover, body.__pink .footer-title:focus, body.__pink .header-logo:focus {
   color: #F0D3F7;
 }
 body.__pink .nav ul li a::before {
   background: #F0D3F7;
+}
+body.__pink .footer.__upper {
+  background: rgba(240, 211, 247, 0.1);
+}
+body.__pink .footer.__lower {
+  background: rgba(240, 211, 247, 0.7);
 }
 body.__pink .button, body.__pink .upload-label {
   background: #F0D3F7;
@@ -229,14 +265,20 @@ body.__pink .upload-area {
 body.__pink .upload-icon {
   color: #F0D3F7;
 }
-body.__yellow .header-logo span {
+body.__yellow .footer-title span, body.__yellow .header-logo span {
   color: #F6E35D;
 }
-body.__yellow .header-logo:hover, body.__yellow .header-logo:focus {
+body.__yellow .footer-title:hover, body.__yellow .header-logo:hover, body.__yellow .footer-title:focus, body.__yellow .header-logo:focus {
   color: #F6E35D;
 }
 body.__yellow .nav ul li a::before {
   background: #F6E35D;
+}
+body.__yellow .footer.__upper {
+  background: rgba(239, 68, 68, 0.1);
+}
+body.__yellow .footer.__lower {
+  background: rgba(246, 227, 93, 0.7);
 }
 body.__yellow .button, body.__yellow .upload-label {
   background: #F6E35D;
@@ -272,6 +314,7 @@ body.__pink .upload-title,
 body.__yellow .upload-title,
 h4,
 .h4,
+.footer-title,
 h5,
 .h5,
 h6,
@@ -291,7 +334,7 @@ h3, .h3, .header-logo, body.__blue .upload-title, body.__green .upload-title, bo
   font-size: 3.2rem;
 }
 
-h4, .h4 {
+h4, .h4, .footer-title {
   font-size: 2.4rem;
 }
 
@@ -323,6 +366,39 @@ p {
   font-size: 2rem;
   font-weight: 500;
   transition: all 0.3s;
+}
+
+.footer .__upper {
+  padding: 4.8rem 0;
+}
+@media screen and (min-width: 992px) {
+  .footer .__upper {
+    padding: 6rem 0;
+  }
+}
+.footer .__lower {
+  padding: 2.56rem 0;
+}
+@media screen and (min-width: 992px) {
+  .footer .__lower {
+    padding: 3.2rem 0;
+  }
+}
+.footer .__lower p {
+  color: #FCFCFC;
+  font-weight: 500;
+}
+.footer .__lower p a {
+  font-weight: 700;
+  color: #FCFCFC;
+  text-decoration: underline;
+}
+.footer-title {
+  display: inline-block;
+  margin-bottom: 0.8rem;
+}
+.footer-text {
+  color: rgba(30, 30, 30, 0.8);
 }
 
 .header {

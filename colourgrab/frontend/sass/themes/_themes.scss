@@ -1,14 +1,18 @@
 @mixin setColorTheme($color, $colorTen, $colorSeventy) {
+    %colortitle {
+        span {
+            color: $color;
+        }
+    
+        &:hover,
+        &:focus {
+            color: $color;
+        }
+    }
+
     .header {
         &-logo {
-            span {
-                color: $color;
-            }
-
-            &:hover,
-            &:focus {
-                color: $color;
-            }
+            @extend %colortitle;
         }
     }
 
@@ -21,6 +25,20 @@
                     }
                 }
             }
+        }
+    }
+
+    .footer {
+        &.__upper {
+            background: $colorTen;
+        }
+        
+        &.__lower {
+            background: $colorSeventy;
+        }
+
+        &-title {
+            @extend %colortitle;
         }
     }
 

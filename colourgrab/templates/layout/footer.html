@@ -1,9 +1,26 @@
 <footer class="footer">
-    <div class="container">
-        <div class="row">
-            <div class="col-12">
-                Footer test
-            </div><!-- col -->
-        </div><!-- row -->
-    </div><!-- container -->
+    <div class="footer __upper">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-4">
+                    <a class="footer-title" href="{{ url_for('home') }}">
+                        <span>Color</span>grab
+                    </a>
+                    <p class="footer-text">Lorem ipsum dolor sit amet consectetur adipiscing elit Ut et massa mi. Aliquam in hendrerit.</p>
+                </div><!-- col -->
+            </div><!-- row -->
+        </div><!-- container -->
+    </div>
+    <div class="footer __lower">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-6">
+                    <p class="copyright">Copyright &copy; {{ current_year }}</p>
+                </div><!-- col -->
+                <div class="col-lg-6 d-flex justify-content-lg-end align-items-lg-end">
+                    <p>Designed & developed by <a href="https://www.twitter.com/samueljforrest" target="_blank">Samuel James Forrest</a></p>
+                </div><!-- col -->
+            </div><!-- row -->
+        </div><!-- container -->
+    </div>
 </footer>

@@ -1,0 +1,33 @@
+@use '../util';
+@use '../base/global';
+
+.footer {
+    .__upper {
+        @include util.sectionPadding(6rem);
+    }
+
+    .__lower {
+        @include util.sectionPadding(3.2rem);
+
+        p {
+            color: util.$color-white;
+            font-weight: util.$font-medium;
+
+            a {
+                font-weight: util.$font-bold;
+                color: util.$color-white;
+                text-decoration: underline;
+            }
+        }
+    }
+
+    &-title {
+        @extend .h4;
+        display: inline-block;
+        margin-bottom: .8rem;
+    }
+
+    &-text {
+        color: util.$color-black-80;
+    }
+}
