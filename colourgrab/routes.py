@@ -21,11 +21,11 @@ def home():
         image = request.files['file-input']
         filename = secure_filename(image.filename)
 
-        
         # Use absolute path for saving the file
         file_path = os.path.join(os.path.abspath(UPLOAD_FOLDER), filename)
         image.save(file_path)
 
+        # If uploaded image already exists in session, clear it
         if session.get('uploaded_image'):
             session.clear()
 

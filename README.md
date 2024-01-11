@@ -1,5 +1,10 @@
 # ColourGrab
 
+## Features
+
+### Features To Be Implemented
+- Drag & drop image upload
+
 ## Design
 
 ### Colour Themes
@@ -27,3 +32,8 @@
 
 ### Build Frontend
 - npx mix watch
+
+## Testing
+
+## Bugs (turn this into table)
+- Colour palettes not always in order of colour
