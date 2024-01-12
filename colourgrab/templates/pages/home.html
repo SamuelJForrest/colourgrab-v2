@@ -7,8 +7,10 @@
 {% block scripts %}
     <script>
         const uploadForm = document.querySelector('#upload-form');
+        const uploadText = document.querySelector('.upload-area-text');
 
         uploadForm.addEventListener('change', () => {
+            uploadText.innerText = 'Uploading...';
             uploadForm.submit();
         })
     </script>

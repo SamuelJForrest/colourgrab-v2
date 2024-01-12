@@ -318,7 +318,8 @@ h4,
 h5,
 .h5,
 h6,
-.h6 {
+.h6,
+.footer-menu-title {
   font-weight: 700;
 }
 
@@ -342,7 +343,7 @@ h5, .h5 {
   font-size: 2rem;
 }
 
-h6, .h6 {
+h6, .h6, .footer-menu-title {
   font-size: 1.8rem;
 }
 
@@ -399,6 +400,28 @@ p {
 }
 .footer-text {
   color: rgba(30, 30, 30, 0.8);
+}
+.footer-menu li + li {
+  margin-top: 0.8rem;
+}
+.footer-menu li a {
+  position: relative;
+}
+.footer-menu li a::after {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 0;
+  height: 1px;
+  background: #1E1E1E;
+  transition: all 0.3s;
+}
+.footer-menu li a:hover::after, .footer-menu li a:focus::after {
+  width: 100%;
+}
+.footer-menu-title {
+  margin-bottom: 1.6rem;
 }
 
 .header {
@@ -485,6 +508,10 @@ p {
 .upload-icon {
   font-size: 8rem;
   margin-bottom: 2.4rem;
+}
+.upload-label.__submitting {
+  pointer-events: none;
+  cursor: disabled;
 }
 .upload-input {
   pointer-events: none;

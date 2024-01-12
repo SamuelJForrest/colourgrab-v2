@@ -30,4 +30,39 @@
     &-text {
         color: util.$color-black-80;
     }
+
+    &-menu {
+        li {
+            &+li {
+                margin-top: .8rem;
+            }
+
+            a {
+                position: relative;
+
+                &::after {
+                    content: '';
+                    position: absolute;
+                    bottom: 0;
+                    left: 0;
+                    width: 0;
+                    height: 1px;
+                    background: util.$color-black;
+                    transition: all .3s;
+                }
+
+                &:hover,
+                &:focus {
+                    &::after {
+                        width: 100%;
+                    }
+                }
+            }
+        }
+
+        &-title {
+            @extend .h6;
+            margin-bottom: 1.6rem;
+        }
+    }
 }
