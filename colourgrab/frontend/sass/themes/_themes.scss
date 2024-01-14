@@ -40,6 +40,21 @@
         &-title {
             @extend %colortitle;
         }
+
+        &-menu {
+            &-list {
+                li {
+                    a {
+                        &:hover,
+                        &:focus {
+                            i {
+                                color: $color;
+                            }
+                        }
+                    }
+                }
+            }
+        }
     }
 
     .button {

@@ -76,6 +76,9 @@ body.__blue .footer.__upper {
 body.__blue .footer.__lower {
   background: rgba(14, 165, 233, 0.7);
 }
+body.__blue .footer-menu-list li a:hover i, body.__blue .footer-menu-list li a:focus i {
+  color: #0EA5E9;
+}
 body.__blue .button, body.__blue .upload-label {
   background: #0EA5E9;
 }
@@ -109,6 +112,9 @@ body.__green .footer.__upper {
 }
 body.__green .footer.__lower {
   background: rgba(60, 179, 90, 0.7);
+}
+body.__green .footer-menu-list li a:hover i, body.__green .footer-menu-list li a:focus i {
+  color: #3CB35A;
 }
 body.__green .button, body.__green .upload-label {
   background: #3CB35A;
@@ -144,6 +150,9 @@ body.__red .footer.__upper {
 body.__red .footer.__lower {
   background: rgba(239, 68, 68, 0.7);
 }
+body.__red .footer-menu-list li a:hover i, body.__red .footer-menu-list li a:focus i {
+  color: #EF4444;
+}
 body.__red .button, body.__red .upload-label {
   background: #EF4444;
 }
@@ -177,6 +186,9 @@ body.__orange .footer.__upper {
 }
 body.__orange .footer.__lower {
   background: rgba(242, 149, 89, 0.7);
+}
+body.__orange .footer-menu-list li a:hover i, body.__orange .footer-menu-list li a:focus i {
+  color: #F29559;
 }
 body.__orange .button, body.__orange .upload-label {
   background: #F29559;
@@ -212,6 +224,9 @@ body.__purple .footer.__upper {
 body.__purple .footer.__lower {
   background: rgba(136, 96, 239, 0.7);
 }
+body.__purple .footer-menu-list li a:hover i, body.__purple .footer-menu-list li a:focus i {
+  color: #8860EF;
+}
 body.__purple .button, body.__purple .upload-label {
   background: #8860EF;
 }
@@ -246,6 +261,9 @@ body.__pink .footer.__upper {
 body.__pink .footer.__lower {
   background: rgba(240, 211, 247, 0.7);
 }
+body.__pink .footer-menu-list li a:hover i, body.__pink .footer-menu-list li a:focus i {
+  color: #F0D3F7;
+}
 body.__pink .button, body.__pink .upload-label {
   background: #F0D3F7;
 }
@@ -279,6 +297,9 @@ body.__yellow .footer.__upper {
 }
 body.__yellow .footer.__lower {
   background: rgba(246, 227, 93, 0.7);
+}
+body.__yellow .footer-menu-list li a:hover i, body.__yellow .footer-menu-list li a:focus i {
+  color: #F6E35D;
 }
 body.__yellow .button, body.__yellow .upload-label {
   background: #F6E35D;
@@ -400,28 +421,29 @@ p {
 }
 .footer-text {
   color: rgba(30, 30, 30, 0.8);
+  margin-bottom: 1.6rem;
 }
-.footer-menu li + li {
-  margin-top: 0.8rem;
+@media screen and (min-width: 992px) {
+  .footer-text {
+    margin-bottom: 0;
+  }
 }
-.footer-menu li a {
-  position: relative;
+.footer-menu-list {
+  display: flex;
+  gap: 1.2rem;
 }
-.footer-menu li a::after {
-  content: "";
-  position: absolute;
-  bottom: 0;
-  left: 0;
-  width: 0;
-  height: 1px;
-  background: #1E1E1E;
+.footer-menu-list li a i {
+  font-size: 2.4rem;
   transition: all 0.3s;
 }
-.footer-menu li a:hover::after, .footer-menu li a:focus::after {
-  width: 100%;
+.footer-menu-list li a i.fa-house {
+  font-size: 2rem;
+}
+.footer-menu-list li a span {
+  font-size: 0;
 }
 .footer-menu-title {
-  margin-bottom: 1.6rem;
+  margin: 1.6rem 0;
 }
 
 .header {
@@ -502,8 +524,10 @@ p {
   padding: 6rem;
   height: auto;
 }
-.upload-area p {
+.upload-area-filetypes {
   margin-bottom: 1.6rem;
+  font-size: 1rem;
+  opacity: 0.6;
 }
 .upload-icon {
   font-size: 8rem;
