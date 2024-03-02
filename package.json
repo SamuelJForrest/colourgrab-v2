@@ -6,7 +6,7 @@
     "test": "echo \"Error: no test specified\" && exit 1",
     "dev": "cross-env NODE_ENV=development npx mix",
     "prod": "cross-env NODE_ENV=production npx mix",
-    "watch": "cross-env NODE_ENV=development npx mix --watch"
+    "watch": "cross-env NODE_ENV=development npx mix watch"
   },
   "keywords": [],
   "author": "",
