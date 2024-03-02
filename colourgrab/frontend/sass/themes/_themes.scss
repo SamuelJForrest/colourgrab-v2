@@ -1,3 +1,5 @@
+@use '../util/' as util;
+
 @mixin setColorTheme($color, $colorTen, $colorSeventy) {
     %colortitle {
         span {
@@ -20,9 +22,7 @@
         ul {
             li {
                 a {
-                    &::before {
-                        background: $color;
-                    }
+                    @include util.underline($color);
                 }
             }
         }
@@ -69,7 +69,7 @@
     .upload {
         &-title {
             @extend .h3;
-            margin-bottom: 1.2rem;
+            margin-bottom: 2rem;
 
             span {
                 color: $color;

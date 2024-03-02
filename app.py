@@ -11,6 +11,7 @@ app.config['SECRET_KEY'] = SECRET_KEY
 
 if __name__ == '__main__':
     app.run(
-        debug=os.getenv('DEVELOPMENT'), 
+        debug=os.getenv('DEVELOPMENT'),
+        host='0.0.0.0', # this line is required for docker to run your app
         port=PORT
     )

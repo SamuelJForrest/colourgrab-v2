@@ -14,9 +14,9 @@
             font-weight: util.$font-medium;
 
             a {
+                @include util.underline(util.$color-white);
                 font-weight: util.$font-bold;
                 color: util.$color-white;
-                text-decoration: underline;
             }
         }
     }

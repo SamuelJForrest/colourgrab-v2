@@ -13,24 +13,6 @@
             a {
                 position: relative;
                 font-weight: util.$font-medium;
-
-                &:hover,
-                &:focus {
-                    &::before {
-                        width: 100%;
-                    }
-                }
-
-                &::before {
-                    content: '';
-                    position: absolute;
-                    left: 0;
-                    bottom: 0;
-                    width: 0;
-                    height: 2px;
-                    background: util.$color-black;
-                    transition: all .3s;
-                }
             }
         }
     }

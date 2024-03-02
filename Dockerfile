@@ -17,4 +17,4 @@ COPY . /colourgrab
 EXPOSE 5000
 
 # Run app.py when the container launches
-CMD ["flask", "run"]
+CMD ["python3", "app.py"]
