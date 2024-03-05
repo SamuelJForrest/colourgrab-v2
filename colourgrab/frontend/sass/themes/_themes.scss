@@ -89,4 +89,34 @@
             @extend .button;
         }
     }
+
+    .loader {
+        border-color: rgba($colorSeventy, 0.5);
+        border-top-color: $color;
+    }
+
+    .alerts {
+        &-wrap {
+            border-color: $color;
+        }
+
+        &-close {
+            i::before {
+                color: $color;
+            }
+
+            &:hover,
+            &:focus {
+                i::before {
+                    color: darken($color, 25%);
+                }
+            }
+        }
+
+        &-icon {
+            &::before {
+                color: $color;
+            }
+        }
+    }
 }

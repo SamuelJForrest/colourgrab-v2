@@ -17,4 +17,4 @@ COPY . /colourgrab
 EXPOSE 5000
 
 # Run app.py when the container launches
-CMD ["python3", "app.py"]
+CMD ["gunicorn", "--reload", "-w", "4", "-b", "0.0.0.0:5000", "app:app"]

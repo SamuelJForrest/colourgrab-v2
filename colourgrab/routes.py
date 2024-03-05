@@ -2,10 +2,11 @@ import random
 import os
 from dotenv import load_dotenv
 from colourgrab import app
-from flask import Flask, render_template, request, redirect, url_for, session
+from flask import Flask, render_template, request, redirect, url_for, session, flash
 import colorgram as cg
 from datetime import datetime
 from werkzeug.utils import secure_filename
+from .utils import allowed_file
 
 COLOUR_MODIFIERS = ['blue', 'green', 'red', 'orange', 'purple', 'pink', 'yellow']
 THEME = random.choice(COLOUR_MODIFIERS)
@@ -19,21 +20,27 @@ CURRENT_YEAR = datetime.now().year
 def home():
     if request.method == 'POST':
         image = request.files['file-input']
-        filename = secure_filename(image.filename)
+        
+        # If the file has an allowed extension
+        if image and allowed_file(image.filename):
+            filename = secure_filename(image.filename)
 
-        # Use absolute path for saving the file
-        file_path = os.path.join(os.path.abspath(UPLOAD_FOLDER), filename)
-        image.save(file_path)
+            # Use absolute path for saving the file
+            file_path = os.path.join(os.path.abspath(UPLOAD_FOLDER), filename)
+            image.save(file_path)
 
-        # If uploaded image already exists in session, clear it
-        if session.get('uploaded_image'):
-            session.clear()
+            # If uploaded image already exists in session, clear it
+            if session.get('uploaded_image'):
+                session.clear()
 
-        # Store the filename in session (you might want to use a database instead)
-        session['uploaded_image'] = filename
+            # Store the filename in session (you might want to use a database instead)
+            session['uploaded_image'] = filename
 
-        return redirect(url_for('palette'))
-
+            return redirect(url_for('palette'))
+        else:
+            flash('Invalid file type. Please upload a .jpg, .png, or .svg file.')
+            return redirect(url_for('home'))
+        
     return render_template(
         'pages/home.html',
         theme=THEME,

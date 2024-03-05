@@ -1,0 +1,19 @@
+@use '../util/variables' as vars;
+
+$loaderThickness: 12px;
+$loaderWidthAndHeight: 56px;
+
+.loader {
+    border: $loaderThickness solid vars.$color-white;
+    border-top: $loaderThickness solid vars.$color-black;
+    border-radius: 50%;
+    width: $loaderWidthAndHeight;
+    height: $loaderWidthAndHeight;
+    margin-bottom: 2.4rem;
+    animation: spin 3s linear infinite;
+}
+  
+@keyframes spin {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+}

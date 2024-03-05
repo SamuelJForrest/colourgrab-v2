@@ -5,9 +5,31 @@
 /*!***************************************!*\
   !*** ./colourgrab/frontend/js/app.js ***!
   \***************************************/
+/***/ ((__unused_webpack_module, __unused_webpack_exports, __webpack_require__) => {
+
+__webpack_require__(/*! ./modules/alerts */ "./colourgrab/frontend/js/modules/alerts.js");
+
+/***/ }),
+
+/***/ "./colourgrab/frontend/js/modules/alerts.js":
+/*!**************************************************!*\
+  !*** ./colourgrab/frontend/js/modules/alerts.js ***!
+  \**************************************************/
 /***/ (() => {
 
+var alertsClose = document.querySelector('.alerts-close');
+var alertsWrap = document.querySelector('.alerts-wrap');
+var fadeOutSpeed = 1000; // matches the .alerts-wrap opacity transition property in _alerts.scss  
 
+var closeAlerts = function closeAlerts() {
+  alertsWrap.style.opacity = 0;
+  setTimeout(function () {
+    alertsWrap.remove();
+  }, fadeOutSpeed);
+};
+if (alertsClose) {
+  alertsClose.addEventListener('click', closeAlerts);
+}
 
 /***/ }),
 

@@ -1,0 +1,16 @@
+{% with alerts = get_flashed_messages() %}
+    {% if alerts %}
+        <div class="alerts-wrap">
+            <i class="alerts-icon fa-solid fa-circle-exclamation"></i>
+            <button class="alerts-close">
+                <i class="fa-solid fa-close"></i>
+                <span>Close</span>
+            </button>
+            <ul class="alerts">
+                {% for alert in alerts %}
+                    <li>{{ alert }}</li>
+                {% endfor %}
+            </ul>
+        </div>
+    {% endif %}
+{% endwith %}
