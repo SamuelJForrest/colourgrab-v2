@@ -15,11 +15,50 @@
         grid-template-columns: repeat(8, 1fr);
         gap: 1.6rem;
         padding: 0 2.4rem;
+        margin-top: 2.4rem;
+
+        @media screen and (min-width: util.$lg) {
+            margin-top: 0;
+        }
     }
 
     &-color {
+        cursor: pointer;
+        border: none;
         border-radius: .8rem;
         width: 100%;
         aspect-ratio: 1;
+        transition: transform .3s;
+
+        &[aria-pressed='true'] {
+            i {
+                display: block;
+            }
+        }
+
+        &.__blackicon {
+            i::before {
+                color: util.$color-black;
+            }
+        }
+
+        &.__whiteicon {
+            i::before {
+                color: util.$color-white;
+            }
+        }
+
+        &:hover,
+        &:focus {
+            transform: translateY(-.4rem);
+        }
+
+        i {
+            display: none;
+
+            &::before {
+                font-size: 2rem;
+            }
+        }
     }
 }

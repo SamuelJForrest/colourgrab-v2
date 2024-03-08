@@ -708,11 +708,38 @@ p {
   grid-template-columns: repeat(8, 1fr);
   gap: 1.6rem;
   padding: 0 2.4rem;
+  margin-top: 2.4rem;
+}
+@media screen and (min-width: 992px) {
+  .palette-grid {
+    margin-top: 0;
+  }
 }
 .palette-color {
+  cursor: pointer;
+  border: none;
   border-radius: 0.8rem;
   width: 100%;
   aspect-ratio: 1;
+  transition: transform 0.3s;
+}
+.palette-color[aria-pressed=true] i {
+  display: block;
+}
+.palette-color.__blackicon i::before {
+  color: #1E1E1E;
+}
+.palette-color.__whiteicon i::before {
+  color: #FCFCFC;
+}
+.palette-color:hover, .palette-color:focus {
+  transform: translateY(-0.4rem);
+}
+.palette-color i {
+  display: none;
+}
+.palette-color i::before {
+  font-size: 2rem;
 }
 
 .upload {

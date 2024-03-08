@@ -8,7 +8,10 @@
     {% if color_list %}
         <div class="palette-grid">
             {% for color in color_list %}
-                <div class="palette-color" style="background-color: rgb({{color[0]}}, {{color[1]}}, {{color[2]}})"></div>
+                <button class="palette-color toggleColour" style="background-color: rgb({{color[0]}}, {{color[1]}}, {{color[2]}})" aria-pressed="false">
+                    <i class="fa-solid fa-check"></i>
+                    <span class="visually-hidden">Select color (rgb({{color[0]}}, {{color[1]}}, {{color[2]}}))</span>
+                </button>
             {% endfor %}
         </div>
     {% endif %}

@@ -8,6 +8,7 @@
 /***/ ((__unused_webpack_module, __unused_webpack_exports, __webpack_require__) => {
 
 __webpack_require__(/*! ./modules/alerts */ "./colourgrab/frontend/js/modules/alerts.js");
+__webpack_require__(/*! ./modules/selectPalette */ "./colourgrab/frontend/js/modules/selectPalette.js");
 
 /***/ }),
 
@@ -29,6 +30,46 @@ var closeAlerts = function closeAlerts() {
 };
 if (alertsClose) {
   alertsClose.addEventListener('click', closeAlerts);
+}
+
+/***/ }),
+
+/***/ "./colourgrab/frontend/js/modules/selectPalette.js":
+/*!*********************************************************!*\
+  !*** ./colourgrab/frontend/js/modules/selectPalette.js ***!
+  \*********************************************************/
+/***/ (() => {
+
+function _slicedToArray(arr, i) { return _arrayWithHoles(arr) || _iterableToArrayLimit(arr, i) || _unsupportedIterableToArray(arr, i) || _nonIterableRest(); }
+function _nonIterableRest() { throw new TypeError("Invalid attempt to destructure non-iterable instance.\nIn order to be iterable, non-array objects must have a [Symbol.iterator]() method."); }
+function _unsupportedIterableToArray(o, minLen) { if (!o) return; if (typeof o === "string") return _arrayLikeToArray(o, minLen); var n = Object.prototype.toString.call(o).slice(8, -1); if (n === "Object" && o.constructor) n = o.constructor.name; if (n === "Map" || n === "Set") return Array.from(o); if (n === "Arguments" || /^(?:Ui|I)nt(?:8|16|32)(?:Clamped)?Array$/.test(n)) return _arrayLikeToArray(o, minLen); }
+function _arrayLikeToArray(arr, len) { if (len == null || len > arr.length) len = arr.length; for (var i = 0, arr2 = new Array(len); i < len; i++) arr2[i] = arr[i]; return arr2; }
+function _iterableToArrayLimit(r, l) { var t = null == r ? null : "undefined" != typeof Symbol && r[Symbol.iterator] || r["@@iterator"]; if (null != t) { var e, n, i, u, a = [], f = !0, o = !1; try { if (i = (t = t.call(r)).next, 0 === l) { if (Object(t) !== t) return; f = !1; } else for (; !(f = (e = i.call(t)).done) && (a.push(e.value), a.length !== l); f = !0); } catch (r) { o = !0, n = r; } finally { try { if (!f && null != t["return"] && (u = t["return"](), Object(u) !== u)) return; } finally { if (o) throw n; } } return a; } }
+function _arrayWithHoles(arr) { if (Array.isArray(arr)) return arr; }
+var colourPalettes = document.querySelectorAll('.toggleColour');
+var selectPaletteColour = function selectPaletteColour(el) {
+  el.setAttribute('aria-pressed', el.getAttribute('aria-pressed') == 'false' ? 'true' : 'false');
+};
+var setTextColour = function setTextColour(el) {
+  var elementBackgroundColour = window.getComputedStyle(el).backgroundColor;
+  var _elementBackgroundCol = elementBackgroundColour.match(/\d+/g),
+    _elementBackgroundCol2 = _slicedToArray(_elementBackgroundCol, 3),
+    r = _elementBackgroundCol2[0],
+    g = _elementBackgroundCol2[1],
+    b = _elementBackgroundCol2[2];
+  var luminance = (0.299 * r + 0.587 * g + 0.114 * b) / 255;
+  el.classList.add(luminance > 0.5 ? '__blackicon' : '__whiteicon');
+};
+if (colourPalettes.length > 0) {
+  colourPalettes.forEach(function (palette) {
+    // Add class to determine what colour checkmark should be used when selected
+    setTextColour(palette);
+
+    // Event listener to select palette colour
+    palette.addEventListener('click', function () {
+      selectPaletteColour(palette);
+    });
+  });
 }
 
 /***/ }),

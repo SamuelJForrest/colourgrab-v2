@@ -56,7 +56,7 @@ def palette():
     image_url = url_for('static', filename=os.path.join('uploads', filename)) if filename else None
 
     color_list = []
-    colors = cg.extract(os.path.join(UPLOAD_FOLDER, filename), 8)
+    colors = cg.extract(os.path.join(UPLOAD_FOLDER, filename), 16)
     colors.sort(key=lambda c: c.hsl.h)
     for color in colors:
         r = color.rgb.r
