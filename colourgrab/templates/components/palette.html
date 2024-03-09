@@ -4,15 +4,31 @@
         <img src="{{ url_for('static', filename='uploads/' + image_filename) }}" alt="Uploaded Image">
     </div>
 </div><!-- col -->
-<div class="col-lg-6">
-    {% if color_list %}
-        <div class="palette-grid">
-            {% for color in color_list %}
-                <button class="palette-color toggleColour" style="background-color: rgb({{color[0]}}, {{color[1]}}, {{color[2]}})" aria-pressed="false">
-                    <i class="fa-solid fa-check"></i>
-                    <span class="visually-hidden">Select color (rgb({{color[0]}}, {{color[1]}}, {{color[2]}}))</span>
-                </button>
-            {% endfor %}
+
+{% if color_list %}
+    <div class="col-lg-6">
+        <div class="palette-wrap">
+            <section class="palette-grid">
+                <h2 class="palette-title">Colours</h2>
+                <div class="palette-grid-area">
+                    {% for color in color_list %}
+                        <button class="palette-color toggleColour" style="background-color: rgb({{color[0]}}, {{color[1]}}, {{color[2]}})" aria-pressed="false">
+                            <i class="fa-solid fa-check"></i>
+                            <span class="visually-hidden">Select color (rgb({{color[0]}}, {{color[1]}}, {{color[2]}}))</span>
+                        </button>
+                    {% endfor %}
+                </div>
+            </section>
+            
+            <section class="palette-buttons">
+                <h2 class="palette-title">Generate palettes</h2>
+                <div class="palette-buttons-area">
+                    <button class="palette-button __colours">Colours (RGB)</button>
+                    <button class="palette-button __css">CSS variables</button>
+                    <button class="palette-button __sass">SASS variables</button>
+                    <button class="palette-button __tailwind">Tailwind variables</button>
+                </div>
+            </section>
         </div>
-    {% endif %}
-</div><!-- col -->
+    </div><!-- col -->
+{% endif %}

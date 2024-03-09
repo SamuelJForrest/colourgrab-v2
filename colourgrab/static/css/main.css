@@ -98,10 +98,10 @@ body.__blue .footer.__lower {
 body.__blue .footer-menu-list li a:hover i, body.__blue .footer-menu-list li a:focus i {
   color: #0EA5E9;
 }
-body.__blue .button, body.__blue .upload-label {
+body.__blue .button, body.__blue .palette-button, body.__blue .upload-label {
   background: #0EA5E9;
 }
-body.__blue .button:hover, body.__blue .upload-label:hover, body.__blue .button:focus, body.__blue .upload-label:focus {
+body.__blue .button:hover, body.__blue .palette-button:hover, body.__blue .upload-label:hover, body.__blue .button:focus, body.__blue .palette-button:focus, body.__blue .upload-label:focus {
   background: #0a72a1;
 }
 body.__blue .upload-title {
@@ -157,10 +157,10 @@ body.__green .footer.__lower {
 body.__green .footer-menu-list li a:hover i, body.__green .footer-menu-list li a:focus i {
   color: #3CB35A;
 }
-body.__green .button, body.__green .upload-label {
+body.__green .button, body.__green .palette-button, body.__green .upload-label {
   background: #3CB35A;
 }
-body.__green .button:hover, body.__green .upload-label:hover, body.__green .button:focus, body.__green .upload-label:focus {
+body.__green .button:hover, body.__green .palette-button:hover, body.__green .upload-label:hover, body.__green .button:focus, body.__green .palette-button:focus, body.__green .upload-label:focus {
   background: #297a3d;
 }
 body.__green .upload-title {
@@ -216,10 +216,10 @@ body.__red .footer.__lower {
 body.__red .footer-menu-list li a:hover i, body.__red .footer-menu-list li a:focus i {
   color: #EF4444;
 }
-body.__red .button, body.__red .upload-label {
+body.__red .button, body.__red .palette-button, body.__red .upload-label {
   background: #EF4444;
 }
-body.__red .button:hover, body.__red .upload-label:hover, body.__red .button:focus, body.__red .upload-label:focus {
+body.__red .button:hover, body.__red .palette-button:hover, body.__red .upload-label:hover, body.__red .button:focus, body.__red .palette-button:focus, body.__red .upload-label:focus {
   background: #d41212;
 }
 body.__red .upload-title {
@@ -275,10 +275,10 @@ body.__orange .footer.__lower {
 body.__orange .footer-menu-list li a:hover i, body.__orange .footer-menu-list li a:focus i {
   color: #F29559;
 }
-body.__orange .button, body.__orange .upload-label {
+body.__orange .button, body.__orange .palette-button, body.__orange .upload-label {
   background: #F29559;
 }
-body.__orange .button:hover, body.__orange .upload-label:hover, body.__orange .button:focus, body.__orange .upload-label:focus {
+body.__orange .button:hover, body.__orange .palette-button:hover, body.__orange .upload-label:hover, body.__orange .button:focus, body.__orange .palette-button:focus, body.__orange .upload-label:focus {
   background: #ec6812;
 }
 body.__orange .upload-title {
@@ -334,10 +334,10 @@ body.__purple .footer.__lower {
 body.__purple .footer-menu-list li a:hover i, body.__purple .footer-menu-list li a:focus i {
   color: #8860EF;
 }
-body.__purple .button, body.__purple .upload-label {
+body.__purple .button, body.__purple .palette-button, body.__purple .upload-label {
   background: #8860EF;
 }
-body.__purple .button:hover, body.__purple .upload-label:hover, body.__purple .button:focus, body.__purple .upload-label:focus {
+body.__purple .button:hover, body.__purple .palette-button:hover, body.__purple .upload-label:hover, body.__purple .button:focus, body.__purple .palette-button:focus, body.__purple .upload-label:focus {
   background: #541ae8;
 }
 body.__purple .upload-title {
@@ -393,10 +393,10 @@ body.__pink .footer.__lower {
 body.__pink .footer-menu-list li a:hover i, body.__pink .footer-menu-list li a:focus i {
   color: #F0D3F7;
 }
-body.__pink .button, body.__pink .upload-label {
+body.__pink .button, body.__pink .palette-button, body.__pink .upload-label {
   background: #F0D3F7;
 }
-body.__pink .button:hover, body.__pink .upload-label:hover, body.__pink .button:focus, body.__pink .upload-label:focus {
+body.__pink .button:hover, body.__pink .palette-button:hover, body.__pink .upload-label:hover, body.__pink .button:focus, body.__pink .palette-button:focus, body.__pink .upload-label:focus {
   background: #da92eb;
 }
 body.__pink .upload-title {
@@ -452,10 +452,10 @@ body.__yellow .footer.__lower {
 body.__yellow .footer-menu-list li a:hover i, body.__yellow .footer-menu-list li a:focus i {
   color: #F6E35D;
 }
-body.__yellow .button, body.__yellow .upload-label {
+body.__yellow .button, body.__yellow .palette-button, body.__yellow .upload-label {
   background: #F6E35D;
 }
-body.__yellow .button:hover, body.__yellow .upload-label:hover, body.__yellow .button:focus, body.__yellow .upload-label:focus {
+body.__yellow .button:hover, body.__yellow .palette-button:hover, body.__yellow .upload-label:hover, body.__yellow .button:focus, body.__yellow .palette-button:focus, body.__yellow .upload-label:focus {
   background: #f2d615;
 }
 body.__yellow .upload-title {
@@ -494,6 +494,7 @@ h2,
 h3,
 .h3,
 .header-logo,
+.palette-title,
 body.__blue .upload-title,
 body.__green .upload-title,
 body.__red .upload-title,
@@ -520,7 +521,7 @@ h2, .h2 {
   font-size: 4rem;
 }
 
-h3, .h3, .header-logo, body.__blue .upload-title, body.__green .upload-title, body.__red .upload-title, body.__orange .upload-title, body.__purple .upload-title, body.__pink .upload-title, body.__yellow .upload-title {
+h3, .h3, .header-logo, .palette-title, body.__blue .upload-title, body.__green .upload-title, body.__red .upload-title, body.__orange .upload-title, body.__purple .upload-title, body.__pink .upload-title, body.__yellow .upload-title {
   font-size: 3.2rem;
 }
 
@@ -581,11 +582,12 @@ p {
   margin-bottom: 0.8rem;
 }
 
-.button, .upload-label {
+.button, .upload-label, .palette-button {
   cursor: pointer;
   position: relative;
   display: inline-block;
   padding: 1.2rem 3.2rem;
+  border: none;
   border-radius: 0.8rem;
   color: #FCFCFC;
   font-size: 2rem;
@@ -704,16 +706,21 @@ p {
   border-radius: 0.8rem;
 }
 .palette-grid {
+  width: 100%;
+}
+.palette-grid-area {
   display: grid;
   grid-template-columns: repeat(8, 1fr);
   gap: 1.6rem;
-  padding: 0 2.4rem;
-  margin-top: 2.4rem;
 }
-@media screen and (min-width: 992px) {
-  .palette-grid {
-    margin-top: 0;
-  }
+.palette-wrap {
+  padding: 0 2.4rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: flex-start;
+  gap: 2.4rem;
+  height: 100%;
 }
 .palette-color {
   cursor: pointer;
@@ -740,6 +747,21 @@ p {
 }
 .palette-color i::before {
   font-size: 2rem;
+}
+.palette-title {
+  margin-bottom: 0.8rem;
+}
+.palette-buttons {
+  margin-top: auto;
+}
+.palette-buttons-area {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.8rem;
+}
+.palette-button {
+  padding: 1rem;
+  font-size: 1.8rem;
 }
 
 .upload {

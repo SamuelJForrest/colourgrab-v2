@@ -1,4 +1,6 @@
 @use '../util';
+@use '../base';
+@use '../components';
 
 .palette {
     @include util.sectionPadding();
@@ -11,15 +13,23 @@
     }
 
     &-grid {
-        display: grid;
-        grid-template-columns: repeat(8, 1fr);
-        gap: 1.6rem;
-        padding: 0 2.4rem;
-        margin-top: 2.4rem;
-
-        @media screen and (min-width: util.$lg) {
-            margin-top: 0;
+        width: 100%;
+        
+        &-area {
+            display: grid;
+            grid-template-columns: repeat(8, 1fr);
+            gap: 1.6rem;
         }
+    }
+
+    &-wrap {
+        padding: 0 2.4rem;
+        display: flex;
+        flex-direction: column;
+        justify-content: flex-start;
+        align-items: flex-start;
+        gap: 2.4rem;
+        height: 100%;
     }
 
     &-color {
@@ -60,5 +70,26 @@
                 font-size: 2rem;
             }
         }
+    }
+
+    &-title {
+        @extend .h3;
+        margin-bottom: .8rem;
+    }
+
+    &-buttons {
+        margin-top: auto;
+
+        &-area {
+            display: flex;
+            flex-wrap: wrap;
+            gap: .8rem;
+        }
+    }
+
+    &-button {
+        @extend .button;
+        padding: 1rem;
+        font-size: 1.8rem;
     }
 }
