@@ -47,6 +47,10 @@ function _arrayLikeToArray(arr, len) { if (len == null || len > arr.length) len 
 function _iterableToArrayLimit(r, l) { var t = null == r ? null : "undefined" != typeof Symbol && r[Symbol.iterator] || r["@@iterator"]; if (null != t) { var e, n, i, u, a = [], f = !0, o = !1; try { if (i = (t = t.call(r)).next, 0 === l) { if (Object(t) !== t) return; f = !1; } else for (; !(f = (e = i.call(t)).done) && (a.push(e.value), a.length !== l); f = !0); } catch (r) { o = !0, n = r; } finally { try { if (!f && null != t["return"] && (u = t["return"](), Object(u) !== u)) return; } finally { if (o) throw n; } } return a; } }
 function _arrayWithHoles(arr) { if (Array.isArray(arr)) return arr; }
 var colourPalettes = document.querySelectorAll('.toggleColour');
+var rgbPaletteButton = document.querySelector('.rgbPalette');
+var cssPaletteButton = document.querySelector('.cssPalette');
+var sassPaletteButton = document.querySelector('.sassPalette');
+var tailwindPaletteButton = document.querySelector('.tailwindPalette');
 var selectPaletteColour = function selectPaletteColour(el) {
   el.setAttribute('aria-pressed', el.getAttribute('aria-pressed') == 'false' ? 'true' : 'false');
 };
@@ -60,6 +64,56 @@ var setTextColour = function setTextColour(el) {
   var luminance = (0.299 * r + 0.587 * g + 0.114 * b) / 255;
   el.classList.add(luminance > 0.5 ? '__blackicon' : '__whiteicon');
 };
+var rgbOptions = {
+  'format': 'rgb'
+};
+var cssOptions = {
+  'format': 'css',
+  'paletteStart': ':root {\n',
+  'paletteEnd': '}'
+};
+var sassOptions = {
+  'format': 'sass'
+};
+var tailwindOptions = {
+  'format': 'tailwind',
+  'paletteStart': 'module.exports = {\n\ttheme: {\n\t\tcolors: {\n',
+  'paletteEnd': '\t\t}\n\t}\n}'
+};
+var generatePalette = function generatePalette(options) {
+  var selectedColours = document.querySelectorAll('.palette-color[aria-pressed=true]');
+  var palette = '';
+  var paletteStart = options.paletteStart,
+    paletteEnd = options.paletteEnd,
+    format = options.format;
+  if (!paletteStart) {
+    paletteStart = '';
+  }
+  if (!paletteEnd) {
+    paletteEnd = '';
+  }
+  selectedColours.forEach(function (color, i) {
+    var backgroundColor = window.getComputedStyle(color).backgroundColor;
+    switch (format) {
+      case 'rgb':
+        palette += "Colour ".concat(i + 1, ": ").concat(backgroundColor, ";\n");
+        break;
+      case 'css':
+        palette += "\t--color-".concat(i + 1, ": ").concat(backgroundColor, ";\n");
+        break;
+      case 'sass':
+        palette += "$color-".concat(i + 1, ": ").concat(backgroundColor, ";\n");
+        break;
+      case 'tailwind':
+        palette += "\t\t\tcolor-".concat(i + 1, ": '").concat(backgroundColor, "',\n");
+        break;
+      default:
+        throw new Error("Unsupported format: ".concat(format));
+    }
+  });
+  console.log(paletteStart + palette + paletteEnd);
+  return paletteStart + palette + paletteEnd;
+};
 if (colourPalettes.length > 0) {
   colourPalettes.forEach(function (palette) {
     // Add class to determine what colour checkmark should be used when selected
@@ -69,6 +123,18 @@ if (colourPalettes.length > 0) {
     palette.addEventListener('click', function () {
       selectPaletteColour(palette);
     });
+  });
+  rgbPaletteButton.addEventListener('click', function () {
+    generatePalette(rgbOptions);
+  });
+  cssPaletteButton.addEventListener('click', function () {
+    generatePalette(cssOptions);
+  });
+  sassPaletteButton.addEventListener('click', function () {
+    generatePalette(sassOptions);
+  });
+  tailwindPaletteButton.addEventListener('click', function () {
+    generatePalette(tailwindOptions);
   });
 }
 

@@ -702,8 +702,11 @@ p {
   }
 }
 .palette-image img {
+  aspect-ratio: 1;
   width: 100%;
   border-radius: 0.8rem;
+  -o-object-fit: cover;
+     object-fit: cover;
 }
 .palette-grid {
   width: 100%;

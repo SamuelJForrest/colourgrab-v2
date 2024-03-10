@@ -1,7 +1,7 @@
 <div class="col-lg-6">
     <div class="palette-image">
         <!-- Generate the image URL using the filename -->
-        <img src="{{ url_for('static', filename='uploads/' + image_filename) }}" alt="Uploaded Image">
+        <img src="{{ url_for('static', filename='uploads/' + image_filename) }}" alt="{{ image_filename if image_filename else 'Uploaded Image' }}">
     </div>
 </div><!-- col -->
 
@@ -23,10 +23,10 @@
             <section class="palette-buttons">
                 <h2 class="palette-title">Generate palettes</h2>
                 <div class="palette-buttons-area">
-                    <button class="palette-button __colours">Colours (RGB)</button>
-                    <button class="palette-button __css">CSS variables</button>
-                    <button class="palette-button __sass">SASS variables</button>
-                    <button class="palette-button __tailwind">Tailwind variables</button>
+                    <button class="palette-button rgbPalette">Colours (RGB)</button>
+                    <button class="palette-button cssPalette">CSS variables</button>
+                    <button class="palette-button sassPalette">SASS variables</button>
+                    <button class="palette-button tailwindPalette">Tailwind variables</button>
                 </div>
             </section>
         </div>
