@@ -9,7 +9,10 @@
     <div class="col-lg-6">
         <div class="palette-wrap">
             <section class="palette-grid">
-                <h2 class="palette-title">Colours</h2>
+                <div class="palette-titlewrap">
+                    <h2 class="palette-title">Colours</h2>
+                    <p class="palette-instructions">(Select colours to add them to your palette)</p>
+                </div>
                 <div class="palette-grid-area">
                     {% for color in color_list %}
                         <button class="palette-color toggleColour" style="background-color: rgb({{color[0]}}, {{color[1]}}, {{color[2]}})" aria-pressed="false">

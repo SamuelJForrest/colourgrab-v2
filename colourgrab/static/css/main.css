@@ -716,6 +716,7 @@ p {
   display: grid;
   grid-template-columns: repeat(8, 1fr);
   gap: 1.6rem;
+  margin-top: 1.2rem;
 }
 .palette-wrap {
   padding: 0 2.4rem;
@@ -752,8 +753,17 @@ p {
 .palette-color i::before {
   font-size: 2rem;
 }
-.palette-title {
+.palette-titlewrap {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 0.8rem;
   margin-bottom: 0.8rem;
+}
+.palette-instructions {
+  font-size: 1.2rem;
+  color: rgba(30, 30, 30, 0.8);
+  transform: translateY(1.5px);
 }
 .palette-buttons {
   margin-top: auto;
@@ -762,6 +772,7 @@ p {
   display: flex;
   flex-wrap: wrap;
   gap: 0.8rem;
+  margin-top: 1.2rem;
 }
 .palette-button {
   padding: 1rem;

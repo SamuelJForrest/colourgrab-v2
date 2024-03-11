@@ -21,6 +21,7 @@
             display: grid;
             grid-template-columns: repeat(8, 1fr);
             gap: 1.6rem;
+            margin-top: 1.2rem;
         }
     }
 
@@ -74,18 +75,32 @@
         }
     }
 
-    &-title {
-        @extend .h3;
+    &-titlewrap {
+        display: flex;
+        align-items: center;
+        flex-wrap: wrap;
+        gap: .8rem;
         margin-bottom: .8rem;
     }
-
+    
+    &-title {
+        @extend .h3;
+    }
+    
+    &-instructions {
+        font-size: 1.2rem;
+        color: rgba(util.$color-black, 0.8);
+        transform: translateY(1.5px);
+    }
+    
     &-buttons {
         margin-top: auto;
-
+        
         &-area {
             display: flex;
             flex-wrap: wrap;
             gap: .8rem;
+            margin-top: 1.2rem;
         }
     }
 
