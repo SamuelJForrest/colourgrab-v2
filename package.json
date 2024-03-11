@@ -20,6 +20,7 @@
     "sass-loader": "^12.6.0"
   },
   "dependencies": {
+    "a11y-dialog": "^8.0.4",
     "bootstrap": "^5.3.2"
   }
 }

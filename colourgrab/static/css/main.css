@@ -491,6 +491,7 @@ body.__yellow .alerts-icon::before {
 h1, .h1,
 h2,
 .h2,
+.palette-modal-title,
 h3,
 .h3,
 .header-logo,
@@ -517,7 +518,7 @@ h1, .h1 {
   font-size: 4.8rem;
 }
 
-h2, .h2 {
+h2, .h2, .palette-modal-title {
   font-size: 4rem;
 }
 
@@ -766,7 +767,37 @@ p {
   padding: 1rem;
   font-size: 1.8rem;
 }
-
+.palette-modal {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.palette-modal[aria-hidden=true] {
+  display: none;
+}
+.palette-modal-overlay {
+  cursor: pointer;
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  z-index: -1;
+  background: rgba(30, 30, 30, 0.4);
+}
+.palette-modal-container {
+  background: #FCFCFC;
+  padding: 2.4rem;
+  border-radius: 0.8rem;
+}
+.palette-modal-close {
+  cursor: pointer;
+}
 .upload {
   padding: 6.4rem 0;
 }

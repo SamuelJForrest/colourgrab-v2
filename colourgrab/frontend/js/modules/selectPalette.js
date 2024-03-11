@@ -1,20 +1,9 @@
+import { dialog } from "./a11y-dialog";
 const colourPalettes = document.querySelectorAll('.toggleColour');
 const rgbPaletteButton = document.querySelector('.rgbPalette');
 const cssPaletteButton = document.querySelector('.cssPalette');
 const sassPaletteButton = document.querySelector('.sassPalette');
 const tailwindPaletteButton = document.querySelector('.tailwindPalette');
-
-const selectPaletteColour = (el) => {
-    el.setAttribute('aria-pressed', el.getAttribute('aria-pressed') == 'false' ? 'true' : 'false' );
-}
-
-const setTextColour = (el) => {
-    const elementBackgroundColour = window.getComputedStyle(el).backgroundColor;
-    const [r, g, b] = elementBackgroundColour.match(/\d+/g);
-    const luminance = (0.299 * r + 0.587 * g + 0.114 * b) / 255;
-
-    el.classList.add(luminance > 0.5 ? '__blackicon' : '__whiteicon');
-}
 
 const rgbOptions = {
     'format': 'rgb',
@@ -36,8 +25,26 @@ const tailwindOptions = {
     'paletteEnd': '\t\t}\n\t}\n}'
 }
 
+const allButtons = [rgbPaletteButton, cssPaletteButton, sassPaletteButton, tailwindPaletteButton];
+const allOptions = [rgbOptions, cssOptions, sassOptions, tailwindOptions];
+
+const selectPaletteColour = (el) => {
+    el.setAttribute('aria-pressed', el.getAttribute('aria-pressed') == 'false' ? 'true' : 'false' );
+}
+
+const setTextColour = (el) => {
+    const elementBackgroundColour = window.getComputedStyle(el).backgroundColor;
+    const [r, g, b] = elementBackgroundColour.match(/\d+/g);
+    const luminance = (0.299 * r + 0.587 * g + 0.114 * b) / 255;
+
+    el.classList.add(luminance > 0.5 ? '__blackicon' : '__whiteicon');
+}
+
 const generatePalette = (options) => {
     const selectedColours = document.querySelectorAll('.palette-color[aria-pressed=true]');
+    
+    if (!selectedColours.length) return;
+
     let palette = '';
     let { paletteStart, paletteEnd, format } = options;
 
@@ -69,7 +76,6 @@ const generatePalette = (options) => {
         }
     });
 
-    console.log(paletteStart + palette + paletteEnd);
     return paletteStart + palette + paletteEnd;
 }
 
@@ -84,19 +90,10 @@ if (colourPalettes.length > 0) {
         });
     });
 
-    rgbPaletteButton.addEventListener('click', () => {
-        generatePalette(rgbOptions);
+    allButtons.forEach((button, i) => {
+        button.addEventListener('click', () => {
+            generatePalette(allOptions[i]);
+            dialog.show();
+        });
     });
-
-    cssPaletteButton.addEventListener('click', () => {
-        generatePalette(cssOptions);
-    });
-
-    sassPaletteButton.addEventListener('click', () => {
-        generatePalette(sassOptions);
-    });
-
-    tailwindPaletteButton.addEventListener('click', () => {
-        generatePalette(tailwindOptions);
-    })
 }
