@@ -9,6 +9,10 @@ body {
     font-family: util.$font-family;
     font-size: 1.6rem;
 
+    &.__modal {
+        overflow: hidden;
+    }
+
     &.__blue {
         @include themes.setColorTheme(
             util.$color-blue,

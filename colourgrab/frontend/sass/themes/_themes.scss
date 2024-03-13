@@ -95,6 +95,19 @@
         border-top-color: $color;
     }
 
+    .palette {
+        &-modal {
+            &-close {
+                &:hover,
+                &:focus {
+                    i {
+                        color: $color;
+                    }
+                }
+            }
+        }
+    }
+
     .alerts {
         &-wrap {
             border-color: $color;

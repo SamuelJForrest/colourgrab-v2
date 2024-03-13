@@ -136,19 +136,45 @@
         }
 
         &-container {
+            position: relative;
             background: util.$color-white;
             padding: 2.4rem;
             border-radius: .8rem;
+            max-width: 90vw;
+            min-width: 55rem;
         }
 
         &-close {
             cursor: pointer;
-        }
+            position: absolute;
+            top: 2.4rem;
+            right: 2.4rem;
+            background: none;
+            border: none;
 
-        &-content {}
+            i {
+                font-size: 2.4rem;
+                transition: color .3s;
+            }
+        }
 
         &-title {
             @extend .h2;
+            margin-bottom: 1.8rem;
+        }
+
+        &-text {
+            background: rgba(util.$color-grey-120, 0.25);
+            padding: 3.2rem 2.8rem;
+            border-radius: .8rem;
+            margin-bottom: 1.6rem;
+            line-height: 1.6;
+        }
+
+        &-copy {
+            @media (min-width: util.$lg) {
+                min-width: 22rem;
+            }
         }
     }
 }

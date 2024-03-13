@@ -1,9 +1,10 @@
-import { dialog } from "./a11y-dialog";
+import { openModal } from "./a11y-dialog";
 const colourPalettes = document.querySelectorAll('.toggleColour');
 const rgbPaletteButton = document.querySelector('.rgbPalette');
 const cssPaletteButton = document.querySelector('.cssPalette');
 const sassPaletteButton = document.querySelector('.sassPalette');
 const tailwindPaletteButton = document.querySelector('.tailwindPalette');
+let paletteString;
 
 const rgbOptions = {
     'format': 'rgb',
@@ -72,11 +73,26 @@ const generatePalette = (options) => {
                 palette += `\t\t\tcolor-${i + 1}: '${backgroundColor}',\n`;
                 break;
             default:
-                throw new Error(`Unsupported format: ${format}`)
+                palette = '';
         }
     });
 
-    return paletteStart + palette + paletteEnd;
+    paletteString = paletteStart + palette + paletteEnd;
+}
+
+const updatePaletteModal = (format) => {
+    const modalTitle = document.querySelector('.palette-modal-title');
+    const modalText = document.querySelector('.palette-modal-text');
+
+    if (!paletteString) {
+        modalTitle.innerHTML = 'NO COLOURS SELECTED';
+        modalText.innerHTML = 'Please try again';
+    } else {
+        const formattedStr = paletteString.replace(/\n/g, "<br>").replace(/\t/g, "&emsp;");
+    
+        modalTitle.innerHTML = format.toUpperCase();
+        modalText.innerHTML = formattedStr;
+    }
 }
 
 if (colourPalettes.length > 0) {
@@ -93,7 +109,10 @@ if (colourPalettes.length > 0) {
     allButtons.forEach((button, i) => {
         button.addEventListener('click', () => {
             generatePalette(allOptions[i]);
-            dialog.show();
+            updatePaletteModal(allOptions[i].format);
+            openModal();
         });
     });
 }
+
+export { paletteString };
