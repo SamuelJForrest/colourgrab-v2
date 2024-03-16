@@ -23,6 +23,9 @@
 - [SCSS](https://sass-lang.com/)
 - [Flask](https://flask.palletsprojects.com/en/3.0.x/)
 
+### Libraries
+- [Colorgram](https://pypi.org/project/colorgram.py/): this package is used to extract the colours from user uploaded images.
+
 ### Tools
 
 ## Development
