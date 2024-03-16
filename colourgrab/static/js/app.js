@@ -82,6 +82,9 @@ if (alertsClose) {
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   copyButton: () => (/* binding */ copyButton)
+/* harmony export */ });
 /* harmony import */ var copy_to_clipboard__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! copy-to-clipboard */ "./node_modules/copy-to-clipboard/index.js");
 /* harmony import */ var copy_to_clipboard__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(copy_to_clipboard__WEBPACK_IMPORTED_MODULE_0__);
 /* harmony import */ var _selectPalette__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./selectPalette */ "./colourgrab/frontend/js/modules/selectPalette.js");
@@ -99,6 +102,7 @@ if (copyButton) {
   });
 }
 
+
 /***/ }),
 
 /***/ "./colourgrab/frontend/js/modules/selectPalette.js":
@@ -113,12 +117,14 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */   paletteString: () => (/* binding */ paletteString)
 /* harmony export */ });
 /* harmony import */ var _a11y_dialog__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./a11y-dialog */ "./colourgrab/frontend/js/modules/a11y-dialog.js");
+/* harmony import */ var _clipboard__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./clipboard */ "./colourgrab/frontend/js/modules/clipboard.js");
 function _slicedToArray(arr, i) { return _arrayWithHoles(arr) || _iterableToArrayLimit(arr, i) || _unsupportedIterableToArray(arr, i) || _nonIterableRest(); }
 function _nonIterableRest() { throw new TypeError("Invalid attempt to destructure non-iterable instance.\nIn order to be iterable, non-array objects must have a [Symbol.iterator]() method."); }
 function _unsupportedIterableToArray(o, minLen) { if (!o) return; if (typeof o === "string") return _arrayLikeToArray(o, minLen); var n = Object.prototype.toString.call(o).slice(8, -1); if (n === "Object" && o.constructor) n = o.constructor.name; if (n === "Map" || n === "Set") return Array.from(o); if (n === "Arguments" || /^(?:Ui|I)nt(?:8|16|32)(?:Clamped)?Array$/.test(n)) return _arrayLikeToArray(o, minLen); }
 function _arrayLikeToArray(arr, len) { if (len == null || len > arr.length) len = arr.length; for (var i = 0, arr2 = new Array(len); i < len; i++) arr2[i] = arr[i]; return arr2; }
 function _iterableToArrayLimit(r, l) { var t = null == r ? null : "undefined" != typeof Symbol && r[Symbol.iterator] || r["@@iterator"]; if (null != t) { var e, n, i, u, a = [], f = !0, o = !1; try { if (i = (t = t.call(r)).next, 0 === l) { if (Object(t) !== t) return; f = !1; } else for (; !(f = (e = i.call(t)).done) && (a.push(e.value), a.length !== l); f = !0); } catch (r) { o = !0, n = r; } finally { try { if (!f && null != t["return"] && (u = t["return"](), Object(u) !== u)) return; } finally { if (o) throw n; } } return a; } }
 function _arrayWithHoles(arr) { if (Array.isArray(arr)) return arr; }
+
 
 var colourPalettes = document.querySelectorAll('.toggleColour');
 var rgbPaletteButton = document.querySelector('.rgbPalette');
@@ -159,7 +165,11 @@ var setTextColour = function setTextColour(el) {
 };
 var generatePalette = function generatePalette(options) {
   var selectedColours = document.querySelectorAll('.palette-color[aria-pressed=true]');
-  if (!selectedColours.length) return;
+  if (!selectedColours.length) {
+    paletteString = '';
+    return;
+  }
+  ;
   var palette = '';
   var paletteStart = options.paletteStart,
     paletteEnd = options.paletteEnd,
@@ -195,12 +205,14 @@ var updatePaletteModal = function updatePaletteModal(format) {
   var modalTitle = document.querySelector('.palette-modal-title');
   var modalText = document.querySelector('.palette-modal-text');
   if (!paletteString) {
-    modalTitle.innerHTML = 'NO COLOURS SELECTED';
-    modalText.innerHTML = 'Please try again';
+    modalTitle.innerHTML = 'Oh no!';
+    modalText.innerHTML = 'It appears you don\'t have any colours selected. Please select colours from the list and try again.';
+    _clipboard__WEBPACK_IMPORTED_MODULE_1__.copyButton.classList.add('d-none');
   } else {
     var formattedStr = paletteString.replace(/\n/g, "<br>").replace(/\t/g, "&emsp;");
-    modalTitle.innerHTML = format.toUpperCase();
+    modalTitle.innerHTML = format;
     modalText.innerHTML = formattedStr;
+    _clipboard__WEBPACK_IMPORTED_MODULE_1__.copyButton.classList.remove('d-none');
   }
 };
 if (colourPalettes.length > 0) {

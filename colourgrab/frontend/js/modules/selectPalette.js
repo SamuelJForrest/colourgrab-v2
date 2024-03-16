@@ -1,4 +1,5 @@
 import { openModal } from "./a11y-dialog";
+import { copyButton } from "./clipboard";
 const colourPalettes = document.querySelectorAll('.toggleColour');
 const rgbPaletteButton = document.querySelector('.rgbPalette');
 const cssPaletteButton = document.querySelector('.cssPalette');
@@ -44,7 +45,10 @@ const setTextColour = (el) => {
 const generatePalette = (options) => {
     const selectedColours = document.querySelectorAll('.palette-color[aria-pressed=true]');
     
-    if (!selectedColours.length) return;
+    if (!selectedColours.length) {
+        paletteString = '';
+        return;
+    };
 
     let palette = '';
     let { paletteStart, paletteEnd, format } = options;
@@ -85,13 +89,15 @@ const updatePaletteModal = (format) => {
     const modalText = document.querySelector('.palette-modal-text');
 
     if (!paletteString) {
-        modalTitle.innerHTML = 'NO COLOURS SELECTED';
-        modalText.innerHTML = 'Please try again';
+        modalTitle.innerHTML = 'Oh no!';
+        modalText.innerHTML = 'It appears you don\'t have any colours selected. Please select colours from the list and try again.';
+        copyButton.classList.add('d-none');
     } else {
         const formattedStr = paletteString.replace(/\n/g, "<br>").replace(/\t/g, "&emsp;");
-    
-        modalTitle.innerHTML = format.toUpperCase();
+        
+        modalTitle.innerHTML = format;
         modalText.innerHTML = formattedStr;
+        copyButton.classList.remove('d-none');
     }
 }
 

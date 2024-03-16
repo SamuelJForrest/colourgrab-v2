@@ -16,3 +16,5 @@ if (copyButton) {
         }, 2000);
     });
 }
+
+export { copyButton };

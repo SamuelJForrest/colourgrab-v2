@@ -140,8 +140,8 @@
             background: util.$color-white;
             padding: 2.4rem;
             border-radius: .8rem;
-            max-width: 90vw;
-            min-width: 55rem;
+            max-width: 95vw;
+            width: 55rem;
         }
 
         &-close {
@@ -161,17 +161,19 @@
         &-title {
             @extend .h2;
             margin-bottom: 1.8rem;
+            text-transform: uppercase;
         }
 
         &-text {
             background: rgba(util.$color-grey-120, 0.25);
             padding: 3.2rem 2.8rem;
             border-radius: .8rem;
-            margin-bottom: 1.6rem;
             line-height: 1.6;
         }
 
         &-copy {
+            margin-top: 1.6rem;
+
             @media (min-width: util.$lg) {
                 min-width: 22rem;
             }
