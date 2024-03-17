@@ -1,6 +1,6 @@
 # ColourGrab
 
-![ColourGrab Cover Image]('./docs/colourgrab-cover-image.gif')
+![ColourGrab Cover Image]('docs/colourgrab-cover-image.gif')
 
 ## Features
 
