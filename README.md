@@ -1,6 +1,11 @@
 # ColourGrab
 
+![ColourGrab Cover Image]('./docs/colourgrab-cover-image.gif')
+
 ## Features
+
+### Current Features
+- Image handling (including compression)
 
 ### Features To Be Implemented
 - Drag & drop image upload
