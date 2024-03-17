@@ -120,85 +120,88 @@ var uploadForm = document.querySelector('#upload-form');
 var uploadArea = document.querySelector('.upload-area');
 var uploadText = document.querySelector('.upload-area-text');
 var uploadIcon = document.querySelector('.upload-icon');
-var compressImage = /*#__PURE__*/function () {
-  var _ref2 = _asyncToGenerator( /*#__PURE__*/_regeneratorRuntime().mark(function _callee(file, _ref) {
-    var _ref$quality, quality, _ref$type, type, imageBitmap, canvas, ctx, blob;
-    return _regeneratorRuntime().wrap(function _callee$(_context) {
-      while (1) switch (_context.prev = _context.next) {
-        case 0:
-          _ref$quality = _ref.quality, quality = _ref$quality === void 0 ? 1 : _ref$quality, _ref$type = _ref.type, type = _ref$type === void 0 ? file.type : _ref$type;
-          _context.next = 3;
-          return createImageBitmap(file);
-        case 3:
-          imageBitmap = _context.sent;
-          canvas = document.createElement('canvas');
-          canvas.width = imageBitmap.width;
-          canvas.height = imageBitmap.height;
-          ctx = canvas.getContext('2d');
-          ctx.drawImage(imageBitmap, 0, 0);
+if (uploadForm) {
+  var compressImage = /*#__PURE__*/function () {
+    var _ref2 = _asyncToGenerator( /*#__PURE__*/_regeneratorRuntime().mark(function _callee(file, _ref) {
+      var _ref$quality, quality, _ref$type, type, imageBitmap, canvas, ctx, blob;
+      return _regeneratorRuntime().wrap(function _callee$(_context) {
+        while (1) switch (_context.prev = _context.next) {
+          case 0:
+            _ref$quality = _ref.quality, quality = _ref$quality === void 0 ? 1 : _ref$quality, _ref$type = _ref.type, type = _ref$type === void 0 ? file.type : _ref$type;
+            _context.next = 3;
+            return createImageBitmap(file);
+          case 3:
+            imageBitmap = _context.sent;
+            canvas = document.createElement('canvas');
+            canvas.width = imageBitmap.width;
+            canvas.height = imageBitmap.height;
+            ctx = canvas.getContext('2d');
+            ctx.drawImage(imageBitmap, 0, 0);
 
-          // turn image data into blob
-          _context.next = 11;
-          return new Promise(function (res) {
-            canvas.toBlob(res, type, quality);
-          });
-        case 11:
-          blob = _context.sent;
-          return _context.abrupt("return", new File([blob], file.name, {
-            type: blob.type
-          }));
-        case 13:
-        case "end":
-          return _context.stop();
-      }
-    }, _callee);
-  }));
-  return function compressImage(_x, _x2) {
-    return _ref2.apply(this, arguments);
-  };
-}();
-uploadForm.addEventListener('change', /*#__PURE__*/function () {
-  var _ref3 = _asyncToGenerator( /*#__PURE__*/_regeneratorRuntime().mark(function _callee2(e) {
-    var files, targetFile, dataTransfer, compressedImage;
-    return _regeneratorRuntime().wrap(function _callee2$(_context2) {
-      while (1) switch (_context2.prev = _context2.next) {
-        case 0:
-          files = e.target.files;
-          targetFile = files[0]; // return if no file selected, or the file type isn't an image
-          if (files.length) {
-            _context2.next = 4;
-            break;
-          }
-          return _context2.abrupt("return");
-        case 4:
-          dataTransfer = new DataTransfer();
-          uploadText.innerText = 'Generating Palette...';
-          uploadIcon.remove();
-          uploadArea.insertAdjacentHTML('afterbegin', '<div class="loader"></div>');
-          if (!targetFile.type.startsWith('image')) {
-            _context2.next = 14;
-            break;
-          }
-          _context2.next = 11;
-          return compressImage(targetFile, {
-            quality: 0.75
-          });
-        case 11:
-          compressedImage = _context2.sent;
-          dataTransfer.items.add(compressedImage);
-          e.target.files = dataTransfer.files;
-        case 14:
-          uploadForm.submit();
-        case 15:
-        case "end":
-          return _context2.stop();
-      }
-    }, _callee2);
-  }));
-  return function (_x3) {
-    return _ref3.apply(this, arguments);
-  };
-}());
+            // turn image data into blob
+            _context.next = 11;
+            return new Promise(function (res) {
+              canvas.toBlob(res, type, quality);
+            });
+          case 11:
+            blob = _context.sent;
+            return _context.abrupt("return", new File([blob], file.name, {
+              type: blob.type
+            }));
+          case 13:
+          case "end":
+            return _context.stop();
+        }
+      }, _callee);
+    }));
+    return function compressImage(_x, _x2) {
+      return _ref2.apply(this, arguments);
+    };
+  }();
+  uploadForm.addEventListener('change', /*#__PURE__*/function () {
+    var _ref3 = _asyncToGenerator( /*#__PURE__*/_regeneratorRuntime().mark(function _callee2(e) {
+      var files, targetFile, uploadConditions, dataTransfer, compressedImage;
+      return _regeneratorRuntime().wrap(function _callee2$(_context2) {
+        while (1) switch (_context2.prev = _context2.next) {
+          case 0:
+            files = e.target.files; // return if no file selected, or the file type isn't an image
+            if (files.length) {
+              _context2.next = 3;
+              break;
+            }
+            return _context2.abrupt("return");
+          case 3:
+            targetFile = files[0];
+            uploadConditions = targetFile.type.startsWith('image') && targetFile.size <= 5 * 1024 * 1024;
+            dataTransfer = new DataTransfer();
+            uploadText.innerText = 'Generating Palette...';
+            uploadIcon.remove();
+            uploadArea.insertAdjacentHTML('afterbegin', '<div class="loader"></div>');
+            if (!uploadConditions) {
+              _context2.next = 15;
+              break;
+            }
+            _context2.next = 12;
+            return compressImage(targetFile, {
+              quality: 0.75
+            });
+          case 12:
+            compressedImage = _context2.sent;
+            dataTransfer.items.add(compressedImage);
+            e.target.files = dataTransfer.files;
+          case 15:
+            uploadForm.submit();
+          case 16:
+          case "end":
+            return _context2.stop();
+        }
+      }, _callee2);
+    }));
+    return function (_x3) {
+      return _ref3.apply(this, arguments);
+    };
+  }());
+}
 
 /***/ }),
 

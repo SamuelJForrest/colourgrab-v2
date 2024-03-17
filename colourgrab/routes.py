@@ -11,14 +11,22 @@ from .utils import allowed_file
 COLOUR_MODIFIERS = ['blue', 'green', 'red', 'orange', 'purple', 'pink', 'yellow']
 THEME = random.choice(COLOUR_MODIFIERS)
 
+ADJECTIVES = ['Stunning', 'Striking', 'Spectacular', 'Gorgeous', 'Magnificent', 'Majestic']
+ADJECTIVE = random.choice(ADJECTIVES)
+
 UPLOAD_FOLDER = os.getenv('UPLOAD_FOLDER')
 app.config['UPLOAD_FOLDER'] = UPLOAD_FOLDER
+app.config['MAX_CONTENT_LENGTH'] = 5 * 1024 * 1024
 
 CURRENT_YEAR = datetime.now().year
 
 @app.route('/', methods=['GET', 'POST'])
 def home():
     if request.method == 'POST':
+        if request.content_length > app.config['MAX_CONTENT_LENGTH']:
+            flash('File upload failed. Maximum allowed file size is 5MB.')
+            return redirect(url_for('home'))
+        
         image = request.files['file-input']
         
         # If the file has an allowed extension
@@ -44,7 +52,8 @@ def home():
     return render_template(
         'pages/home.html',
         theme=THEME,
-        current_year=CURRENT_YEAR
+        current_year=CURRENT_YEAR,
+        adjective=ADJECTIVE
     )
 
 @app.route('/palette')
