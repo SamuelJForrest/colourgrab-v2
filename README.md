@@ -40,3 +40,6 @@
 
 ## Bugs (turn this into table)
 - Colour palettes not always in order of colour
+
+## Credits
+- Thanks to the [Pqina Blog](https://pqina.nl/blog/compress-image-before-upload/#saving-the-compressed-image-back-to-the-file-input) for their article on compressing images using JavaScript.

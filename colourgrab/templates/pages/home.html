@@ -3,22 +3,3 @@
 {% block content %}
     {% include 'components/upload.html' %}
 {% endblock %}
-
-{% block scripts %}
-    <script>
-        const uploadForm = document.querySelector('#upload-form');
-        const uploadArea = document.querySelector('.upload-area');
-        const uploadText = document.querySelector('.upload-area-text');
-        const uploadIcon = document.querySelector('.upload-icon');
-
-        uploadForm.addEventListener('change', () => {
-            uploadText.innerText = 'Generating Palette...';
-            uploadIcon.remove();
-            uploadArea.insertAdjacentHTML(
-                'afterbegin',
-                '<div class="loader"></div>'
-            );
-            uploadForm.submit();
-        });
-    </script>
-{% endblock %}
