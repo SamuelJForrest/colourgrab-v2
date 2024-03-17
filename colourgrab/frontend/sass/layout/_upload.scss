@@ -36,11 +36,6 @@
 
     &-label {
         @extend .button;
-
-        &.__submitting {
-            pointer-events: none;
-            cursor: disabled;
-        }
     }
 
     &-input {

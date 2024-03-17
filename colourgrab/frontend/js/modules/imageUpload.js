@@ -2,6 +2,7 @@ const uploadForm = document.querySelector('#upload-form');
 const uploadArea = document.querySelector('.upload-area');
 const uploadText = document.querySelector('.upload-area-text');
 const uploadIcon = document.querySelector('.upload-icon');
+const uploadButton = document.querySelector('.upload-label');
 
 if (uploadForm) {
     const compressImage = async (file, { quality = 1, type = file.type}) => {
@@ -39,6 +40,7 @@ if (uploadForm) {
             'afterbegin',
             '<div class="loader"></div>'
         );
+        uploadButton.classList.add('d-none');
 
         if (uploadConditions) {
             const compressedImage = await compressImage(targetFile, {

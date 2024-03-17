@@ -120,6 +120,7 @@ var uploadForm = document.querySelector('#upload-form');
 var uploadArea = document.querySelector('.upload-area');
 var uploadText = document.querySelector('.upload-area-text');
 var uploadIcon = document.querySelector('.upload-icon');
+var uploadButton = document.querySelector('.upload-label');
 if (uploadForm) {
   var compressImage = /*#__PURE__*/function () {
     var _ref2 = _asyncToGenerator( /*#__PURE__*/_regeneratorRuntime().mark(function _callee(file, _ref) {
@@ -177,21 +178,22 @@ if (uploadForm) {
             uploadText.innerText = 'Generating Palette...';
             uploadIcon.remove();
             uploadArea.insertAdjacentHTML('afterbegin', '<div class="loader"></div>');
+            uploadButton.classList.add('d-none');
             if (!uploadConditions) {
-              _context2.next = 15;
+              _context2.next = 16;
               break;
             }
-            _context2.next = 12;
+            _context2.next = 13;
             return compressImage(targetFile, {
               quality: 0.75
             });
-          case 12:
+          case 13:
             compressedImage = _context2.sent;
             dataTransfer.items.add(compressedImage);
             e.target.files = dataTransfer.files;
-          case 15:
-            uploadForm.submit();
           case 16:
+            uploadForm.submit();
+          case 17:
           case "end":
             return _context2.stop();
         }

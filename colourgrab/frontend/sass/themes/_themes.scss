@@ -99,6 +99,11 @@
 
         &-label {
             @extend .button;
+
+            &:hover,
+            &:focus-within {
+                background: darken($color, 15%);
+            }
         }
     }
 

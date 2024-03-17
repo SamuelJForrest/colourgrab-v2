@@ -129,6 +129,9 @@ body.__blue .upload-area {
 body.__blue .upload-icon {
   color: #0EA5E9;
 }
+body.__blue .upload-label:hover, body.__blue .upload-label:focus-within {
+  background: #0a72a1;
+}
 body.__blue .loader {
   border-color: rgba(14, 165, 233, 0.5);
   border-top-color: #0EA5E9;
@@ -199,6 +202,9 @@ body.__green .upload-area {
 }
 body.__green .upload-icon {
   color: #3CB35A;
+}
+body.__green .upload-label:hover, body.__green .upload-label:focus-within {
+  background: #297a3d;
 }
 body.__green .loader {
   border-color: rgba(60, 179, 90, 0.5);
@@ -271,6 +277,9 @@ body.__red .upload-area {
 body.__red .upload-icon {
   color: #EF4444;
 }
+body.__red .upload-label:hover, body.__red .upload-label:focus-within {
+  background: #d41212;
+}
 body.__red .loader {
   border-color: rgba(239, 68, 68, 0.5);
   border-top-color: #EF4444;
@@ -341,6 +350,9 @@ body.__orange .upload-area {
 }
 body.__orange .upload-icon {
   color: #F29559;
+}
+body.__orange .upload-label:hover, body.__orange .upload-label:focus-within {
+  background: #ec6812;
 }
 body.__orange .loader {
   border-color: rgba(242, 149, 89, 0.5);
@@ -413,6 +425,9 @@ body.__purple .upload-area {
 body.__purple .upload-icon {
   color: #8860EF;
 }
+body.__purple .upload-label:hover, body.__purple .upload-label:focus-within {
+  background: #541ae8;
+}
 body.__purple .loader {
   border-color: rgba(136, 96, 239, 0.5);
   border-top-color: #8860EF;
@@ -484,6 +499,9 @@ body.__pink .upload-area {
 body.__pink .upload-icon {
   color: #F0D3F7;
 }
+body.__pink .upload-label:hover, body.__pink .upload-label:focus-within {
+  background: #da92eb;
+}
 body.__pink .loader {
   border-color: rgba(240, 211, 247, 0.5);
   border-top-color: #F0D3F7;
@@ -554,6 +572,9 @@ body.__yellow .upload-area {
 }
 body.__yellow .upload-icon {
   color: #F6E35D;
+}
+body.__yellow .upload-label:hover, body.__yellow .upload-label:focus-within {
+  background: #f2d615;
 }
 body.__yellow .loader {
   border-color: rgba(246, 227, 93, 0.5);
@@ -980,10 +1001,6 @@ p {
 .upload-icon {
   font-size: 8rem;
   margin-bottom: 2.4rem;
-}
-.upload-label.__submitting {
-  pointer-events: none;
-  cursor: disabled;
 }
 .upload-input {
   pointer-events: none;
