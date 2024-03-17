@@ -45,9 +45,7 @@ uploadForm.addEventListener('change', async (e) => {
 
         dataTransfer.items.add(compressedImage);
 
-        console.log(e.target.files);
         e.target.files = dataTransfer.files;
-        console.log(e.target.files);
     }
     
     uploadForm.submit();

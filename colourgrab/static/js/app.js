@@ -176,7 +176,7 @@ uploadForm.addEventListener('change', /*#__PURE__*/function () {
           uploadIcon.remove();
           uploadArea.insertAdjacentHTML('afterbegin', '<div class="loader"></div>');
           if (!targetFile.type.startsWith('image')) {
-            _context2.next = 16;
+            _context2.next = 14;
             break;
           }
           _context2.next = 11;
@@ -186,12 +186,10 @@ uploadForm.addEventListener('change', /*#__PURE__*/function () {
         case 11:
           compressedImage = _context2.sent;
           dataTransfer.items.add(compressedImage);
-          console.log(e.target.files);
           e.target.files = dataTransfer.files;
-          console.log(e.target.files);
-        case 16:
+        case 14:
           uploadForm.submit();
-        case 17:
+        case 15:
         case "end":
           return _context2.stop();
       }
