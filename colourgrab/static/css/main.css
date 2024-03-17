@@ -107,6 +107,15 @@ body.__blue .button, body.__blue .palette-button, body.__blue .upload-label {
 body.__blue .button:hover, body.__blue .palette-button:hover, body.__blue .upload-label:hover, body.__blue .button:focus, body.__blue .palette-button:focus, body.__blue .upload-label:focus {
   background: #0a72a1;
 }
+body.__blue .button.__inline, body.__blue .__inline.palette-button, body.__blue .__inline.upload-label {
+  background: none;
+}
+body.__blue .button.__inline span, body.__blue .__inline.palette-button span, body.__blue .__inline.upload-label span {
+  background-image: linear-gradient(transparent calc(100% - 2px), #0EA5E9 2px);
+}
+body.__blue .button.__inline i, body.__blue .__inline.palette-button i, body.__blue .__inline.upload-label i {
+  color: #0EA5E9;
+}
 body.__blue .upload-title {
   margin-bottom: 2rem;
 }
@@ -168,6 +177,15 @@ body.__green .button, body.__green .palette-button, body.__green .upload-label {
 }
 body.__green .button:hover, body.__green .palette-button:hover, body.__green .upload-label:hover, body.__green .button:focus, body.__green .palette-button:focus, body.__green .upload-label:focus {
   background: #297a3d;
+}
+body.__green .button.__inline, body.__green .__inline.palette-button, body.__green .__inline.upload-label {
+  background: none;
+}
+body.__green .button.__inline span, body.__green .__inline.palette-button span, body.__green .__inline.upload-label span {
+  background-image: linear-gradient(transparent calc(100% - 2px), #3CB35A 2px);
+}
+body.__green .button.__inline i, body.__green .__inline.palette-button i, body.__green .__inline.upload-label i {
+  color: #3CB35A;
 }
 body.__green .upload-title {
   margin-bottom: 2rem;
@@ -231,6 +249,15 @@ body.__red .button, body.__red .palette-button, body.__red .upload-label {
 body.__red .button:hover, body.__red .palette-button:hover, body.__red .upload-label:hover, body.__red .button:focus, body.__red .palette-button:focus, body.__red .upload-label:focus {
   background: #d41212;
 }
+body.__red .button.__inline, body.__red .__inline.palette-button, body.__red .__inline.upload-label {
+  background: none;
+}
+body.__red .button.__inline span, body.__red .__inline.palette-button span, body.__red .__inline.upload-label span {
+  background-image: linear-gradient(transparent calc(100% - 2px), #EF4444 2px);
+}
+body.__red .button.__inline i, body.__red .__inline.palette-button i, body.__red .__inline.upload-label i {
+  color: #EF4444;
+}
 body.__red .upload-title {
   margin-bottom: 2rem;
 }
@@ -292,6 +319,15 @@ body.__orange .button, body.__orange .palette-button, body.__orange .upload-labe
 }
 body.__orange .button:hover, body.__orange .palette-button:hover, body.__orange .upload-label:hover, body.__orange .button:focus, body.__orange .palette-button:focus, body.__orange .upload-label:focus {
   background: #ec6812;
+}
+body.__orange .button.__inline, body.__orange .__inline.palette-button, body.__orange .__inline.upload-label {
+  background: none;
+}
+body.__orange .button.__inline span, body.__orange .__inline.palette-button span, body.__orange .__inline.upload-label span {
+  background-image: linear-gradient(transparent calc(100% - 2px), #F29559 2px);
+}
+body.__orange .button.__inline i, body.__orange .__inline.palette-button i, body.__orange .__inline.upload-label i {
+  color: #F29559;
 }
 body.__orange .upload-title {
   margin-bottom: 2rem;
@@ -355,6 +391,15 @@ body.__purple .button, body.__purple .palette-button, body.__purple .upload-labe
 body.__purple .button:hover, body.__purple .palette-button:hover, body.__purple .upload-label:hover, body.__purple .button:focus, body.__purple .palette-button:focus, body.__purple .upload-label:focus {
   background: #541ae8;
 }
+body.__purple .button.__inline, body.__purple .__inline.palette-button, body.__purple .__inline.upload-label {
+  background: none;
+}
+body.__purple .button.__inline span, body.__purple .__inline.palette-button span, body.__purple .__inline.upload-label span {
+  background-image: linear-gradient(transparent calc(100% - 2px), #8860EF 2px);
+}
+body.__purple .button.__inline i, body.__purple .__inline.palette-button i, body.__purple .__inline.upload-label i {
+  color: #8860EF;
+}
 body.__purple .upload-title {
   margin-bottom: 2rem;
 }
@@ -417,6 +462,15 @@ body.__pink .button, body.__pink .palette-button, body.__pink .upload-label {
 body.__pink .button:hover, body.__pink .palette-button:hover, body.__pink .upload-label:hover, body.__pink .button:focus, body.__pink .palette-button:focus, body.__pink .upload-label:focus {
   background: #da92eb;
 }
+body.__pink .button.__inline, body.__pink .__inline.palette-button, body.__pink .__inline.upload-label {
+  background: none;
+}
+body.__pink .button.__inline span, body.__pink .__inline.palette-button span, body.__pink .__inline.upload-label span {
+  background-image: linear-gradient(transparent calc(100% - 2px), #F0D3F7 2px);
+}
+body.__pink .button.__inline i, body.__pink .__inline.palette-button i, body.__pink .__inline.upload-label i {
+  color: #F0D3F7;
+}
 body.__pink .upload-title {
   margin-bottom: 2rem;
 }
@@ -478,6 +532,15 @@ body.__yellow .button, body.__yellow .palette-button, body.__yellow .upload-labe
 }
 body.__yellow .button:hover, body.__yellow .palette-button:hover, body.__yellow .upload-label:hover, body.__yellow .button:focus, body.__yellow .palette-button:focus, body.__yellow .upload-label:focus {
   background: #f2d615;
+}
+body.__yellow .button.__inline, body.__yellow .__inline.palette-button, body.__yellow .__inline.upload-label {
+  background: none;
+}
+body.__yellow .button.__inline span, body.__yellow .__inline.palette-button span, body.__yellow .__inline.upload-label span {
+  background-image: linear-gradient(transparent calc(100% - 2px), #F6E35D 2px);
+}
+body.__yellow .button.__inline i, body.__yellow .__inline.palette-button i, body.__yellow .__inline.upload-label i {
+  color: #F6E35D;
 }
 body.__yellow .upload-title {
   margin-bottom: 2rem;
@@ -619,6 +682,28 @@ p {
   font-weight: 500;
   transition: all 0.3s;
 }
+.button.__inline, .__inline.upload-label, .__inline.palette-button {
+  background: none;
+  padding: 0;
+  color: #1E1E1E;
+  font-size: 1.6rem;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+.button.__inline span, .__inline.upload-label span, .__inline.palette-button span {
+  background-image: linear-gradient(transparent calc(100% - 2px), #1E1E1E 2px);
+  background-size: 0 100%;
+  background-repeat: no-repeat;
+  transition: background-size 0.3s;
+  padding: 0 1px 2px;
+}
+.button.__inline i, .__inline.upload-label i, .__inline.palette-button i {
+  transform: translateY(-1px);
+}
+.button.__inline:hover span, .__inline.upload-label:hover span, .__inline.palette-button:hover span, .button.__inline:focus span, .__inline.upload-label:focus span, .__inline.palette-button:focus span {
+  background-size: 100% 100%;
+}
 
 .loader {
   border: 12px solid #FCFCFC;
@@ -719,11 +804,11 @@ p {
 }
 
 .palette {
-  padding: 6.4rem 0;
+  padding: 4.8rem 0;
 }
 @media screen and (min-width: 992px) {
   .palette {
-    padding: 8rem 0;
+    padding: 6rem 0;
   }
 }
 .palette-image img {
@@ -753,7 +838,7 @@ p {
 }
 .palette-color {
   cursor: pointer;
-  border: none;
+  border: 1px solid rgba(30, 30, 30, 0.25);
   border-radius: 0.8rem;
   width: 100%;
   aspect-ratio: 1;

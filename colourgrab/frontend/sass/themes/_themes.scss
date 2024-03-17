@@ -64,6 +64,18 @@
         &:focus {
             background: darken($color, 15%);
         }
+
+        &.__inline {
+            background: none;
+
+            span {
+                background-image: linear-gradient(transparent calc(100% - 2px), $color 2px);
+            }
+
+            i {
+                color: $color;
+            }
+        }
     }
 
     .upload {

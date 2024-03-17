@@ -4,6 +4,13 @@
     <div class="palette">
         <div class="container">
             <div class="row">
+                <div class="col-12 mb-4">
+                    <a href="{{ url_for('home') }}" class="button __inline">
+                        <i class="fa-solid fa-arrow-left"></i>
+                        <span>Back</span>
+                    </a>
+                </div>
+
                 {% if image_filename %}
                     {% include 'components/palette.html' %}
                 {% else %}

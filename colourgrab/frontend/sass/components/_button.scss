@@ -11,4 +11,33 @@
     font-size: 2rem;
     font-weight: util.$font-medium;
     transition: all .3s;
+
+    &.__inline {
+        background: none;
+        padding: 0;
+        color: util.$color-black;
+        font-size: 1.6rem;
+        display: inline-flex;
+        align-items: center;
+        gap: .5rem;
+
+        span {
+            background-image: linear-gradient(transparent calc(100% - 2px), util.$color-black 2px);
+            background-size: 0 100%;
+            background-repeat: no-repeat;
+            transition: background-size .3s;
+            padding: 0 1px 2px;
+        }
+
+        i {
+            transform: translateY(-1px);
+        }
+
+        &:hover,
+        &:focus {
+            span {
+                background-size: 100% 100%;
+            }
+        }
+    }
 }
