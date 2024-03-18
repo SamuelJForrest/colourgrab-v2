@@ -19,8 +19,12 @@
     &-area {
         @extend .upload-wrap;
         border-radius: 1.6rem;
-        padding: 6rem;
+        padding: 4rem;
         height: auto;
+
+        @media (min-width: util.$lg) {
+            padding: 6rem;
+        }
         
         &-filetypes {
             margin-bottom: 1.6rem;

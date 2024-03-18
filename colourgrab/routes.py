@@ -23,6 +23,7 @@ CURRENT_YEAR = datetime.now().year
 @app.route('/', methods=['GET', 'POST'])
 def home():
     if request.method == 'POST':
+        # Return early if file size is too big
         if request.content_length > app.config['MAX_CONTENT_LENGTH']:
             flash('File upload failed. Maximum allowed file size is 5MB.')
             return redirect(url_for('home'))
