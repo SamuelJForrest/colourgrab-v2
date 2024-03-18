@@ -1,17 +1,38 @@
 import random
 import os
-from dotenv import load_dotenv
 from colourgrab import app
-from flask import Flask, render_template, request, redirect, url_for, session, flash
+from flask import (
+    render_template,
+    request,
+    redirect,
+    url_for,
+    session,
+    flash
+)
 import colorgram as cg
 from datetime import datetime
 from werkzeug.utils import secure_filename
 from .utils import allowed_file
 
-COLOUR_MODIFIERS = ['blue', 'green', 'red', 'orange', 'purple', 'pink', 'yellow']
+COLOUR_MODIFIERS = [
+    'blue',
+    'green',
+    'red',
+    'orange',
+    'purple',
+    'pink',
+    'yellow'
+]
 THEME = random.choice(COLOUR_MODIFIERS)
 
-ADJECTIVES = ['Stunning', 'Striking', 'Spectacular', 'Gorgeous', 'Magnificent', 'Majestic']
+ADJECTIVES = [
+    'Stunning',
+    'Striking',
+    'Spectacular',
+    'Gorgeous',
+    'Magnificent',
+    'Majestic'
+]
 ADJECTIVE = random.choice(ADJECTIVES)
 
 UPLOAD_FOLDER = os.getenv('UPLOAD_FOLDER')
@@ -20,6 +41,7 @@ app.config['MAX_CONTENT_LENGTH'] = 5 * 1024 * 1024
 
 CURRENT_YEAR = datetime.now().year
 
+
 @app.route('/', methods=['GET', 'POST'])
 def home():
     if request.method == 'POST':
@@ -27,9 +49,9 @@ def home():
         if request.content_length > app.config['MAX_CONTENT_LENGTH']:
             flash('File upload failed. Maximum allowed file size is 5MB.')
             return redirect(url_for('home'))
-        
+
         image = request.files['file-input']
-        
+
         # If the file has an allowed extension
         if image and allowed_file(image.filename):
             filename = secure_filename(image.filename)
@@ -42,14 +64,16 @@ def home():
             if session.get('uploaded_image'):
                 session.clear()
 
-            # Store the filename in session (you might want to use a database instead)
+            # Store the filename in session
             session['uploaded_image'] = filename
 
             return redirect(url_for('palette'))
         else:
-            flash('Invalid file type. Please upload a .jpg, .png, or .svg file.')
+            flash(
+                'Invalid file type. Please upload a .jpg, .png, or .svg file.'
+            )
             return redirect(url_for('home'))
-        
+
     return render_template(
         'pages/home.html',
         theme=THEME,
@@ -57,13 +81,21 @@ def home():
         adjective=ADJECTIVE
     )
 
+
 @app.route('/palette')
 def palette():
     # Retrieve the filename from session (or your storage mechanism)
     filename = session.get('uploaded_image')
 
+    # If file doesn't exist, redirect user to homepage
+    if not os.path.isfile(os.path.join(UPLOAD_FOLDER, filename)):
+        flash('There has been an error. Please try again.')
+        return redirect(url_for('home'))
+
     # Use absolute path for generating the image URL
-    image_url = url_for('static', filename=os.path.join('uploads', filename)) if filename else None
+    image_url = url_for(
+        'static', filename=os.path.join('uploads', filename)
+    ) if filename else None
 
     color_list = []
     colors = cg.extract(os.path.join(UPLOAD_FOLDER, filename), 16)
