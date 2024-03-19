@@ -1,6 +1,6 @@
 from dotenv import load_dotenv
 import os
-from colourgrab import app
+from colourgrab import app, routes
 
 load_dotenv()
 PORT = int(os.getenv('PORT'))
