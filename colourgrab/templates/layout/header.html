@@ -1,20 +1,27 @@
+{% set demo_images = has_demo_images %}
+
 <header class="header">
     <div class="container">
         <div class="row">
-            <div class="col-8 col-lg-6">
+            <div class="{{ 'col-8 col-lg-6' if demo_images else 'col-12' }}">
                 <a href="{{ url_for('home') }}" class="header-logo">
                     <span>Colour</span>grab
                 </a>
-            </div><!-- col -->
+            </div>
+            <!-- col -->
+            {% if demo_images %}
             <div class="col-4 col-lg-6">
                 <nav class="nav">
                     <ul>
                         <li>
-                            <a href="#">Demo</a>
+                            <a href="{{ url_for('demo') }}">Demo</a>
                         </li>
                     </ul>
                 </nav>
             </div>
-        </div><!-- row -->
-    </div><!-- container -->
+            {% endif %}
+        </div>
+        <!-- row -->
+    </div>
+    <!-- container -->
 </header>

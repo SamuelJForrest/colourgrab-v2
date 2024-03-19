@@ -1,39 +1,59 @@
 <div class="col-lg-6">
     <div class="palette-image">
         <!-- Generate the image URL using the filename -->
-        <img src="{{ url_for('static', filename='uploads/' + image_filename) }}" alt="{{ image_filename if image_filename else 'Uploaded Image' }}">
+        {% if demo_page %}
+        <img
+            src="{{ url_for('static', filename='images/' + image_filename) }}"
+            alt="{{ image_filename if image_filename else 'Uploaded Image' }}"
+        />
+        {% else %}
+        <img
+            src="{{ url_for('static', filename='uploads/' + image_filename) }}"
+            alt="{{ image_filename if image_filename else 'Uploaded Image' }}"
+        />
+        {% endif %}
     </div>
-</div><!-- col -->
+</div>
+<!-- col -->
 
 {% if color_list %}
-    <div class="col-lg-6">
-        <div class="palette-wrap">
-            <section class="palette-grid">
-                <div class="palette-titlewrap">
-                    <h2 class="palette-title">Colours</h2>
-                    <p class="palette-instructions">(Select colours to add them to your palette)</p>
-                </div>
-                <div class="palette-grid-area">
-                    {% for color in color_list %}
-                        <button class="palette-color toggleColour" style="background-color: rgb({{color[0]}}, {{color[1]}}, {{color[2]}})" aria-pressed="false">
-                            <i class="fa-solid fa-check"></i>
-                            <span class="visually-hidden">Select color (rgb({{color[0]}}, {{color[1]}}, {{color[2]}}))</span>
-                        </button>
-                    {% endfor %}
-                </div>
-            </section>
-            
-            <section class="palette-buttons">
-                <h2 class="palette-title">Generate palettes</h2>
-                <div class="palette-buttons-area">
-                    <button class="palette-button rgbPalette">Colours (RGB)</button>
-                    <button class="palette-button cssPalette">CSS</button>
-                    <button class="palette-button sassPalette">SASS</button>
-                    <button class="palette-button tailwindPalette">Tailwind</button>
-                </div>
-            </section>
-        </div>
-    </div><!-- col -->
+<div class="col-lg-6">
+    <div class="palette-wrap">
+        <section class="palette-grid">
+            <div class="palette-titlewrap">
+                <h2 class="palette-title">Colours</h2>
+                <p class="palette-instructions">
+                    (Select colours to add them to your palette)
+                </p>
+            </div>
+            <div class="palette-grid-area">
+                {% for color in color_list %}
+                <button
+                    class="palette-color toggleColour"
+                    style="background-color: rgb({{color[0]}}, {{color[1]}}, {{color[2]}})"
+                    aria-pressed="false"
+                >
+                    <i class="fa-solid fa-check"></i>
+                    <span class="visually-hidden"
+                        >Select color (rgb({{color[0]}}, {{color[1]}},
+                        {{color[2]}}))</span
+                    >
+                </button>
+                {% endfor %}
+            </div>
+        </section>
 
-    {% include 'components/modal.html' %}
-{% endif %}
+        <section class="palette-buttons">
+            <h2 class="palette-title">Generate palettes</h2>
+            <div class="palette-buttons-area">
+                <button class="palette-button rgbPalette">Colours (RGB)</button>
+                <button class="palette-button cssPalette">CSS</button>
+                <button class="palette-button sassPalette">SASS</button>
+                <button class="palette-button tailwindPalette">Tailwind</button>
+            </div>
+        </section>
+    </div>
+</div>
+<!-- col -->
+
+{% include 'components/modal.html' %} {% endif %}

@@ -1,5 +1,6 @@
 import os
 import sys
+import colorgram as cg
 
 
 UPLOAD_FOLDER = os.getenv('UPLOAD_FOLDER')
@@ -13,6 +14,23 @@ def allowed_file(filename):
         and filename.rsplit('.', 1)[1].lower()
         in ALLOWED_EXTENSIONS
     )
+
+
+def generate_color_palette(filepath):
+    color_list = []
+    colors = cg.extract(filepath, 16)
+    colors.sort(key=lambda c: c.hsl.h)
+    for color in colors:
+        r = color.rgb.r
+        g = color.rgb.g
+        b = color.rgb.b
+        new_color = (r, g, b)
+        color_list.append(new_color)
+
+    return {
+        'colors': colors,
+        'color_list': color_list
+    }
 
 
 def dir_files_length(dir) -> int:

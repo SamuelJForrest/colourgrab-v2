@@ -7,12 +7,16 @@ from flask import (
     redirect,
     url_for,
     session,
-    flash
+    flash,
 )
-import colorgram as cg
 from datetime import datetime
 from werkzeug.utils import secure_filename
-from .utils import allowed_file
+from .utils import (
+    allowed_file,
+    dir_files_length,
+    generate_color_palette
+)
+
 
 COLOUR_MODIFIERS = [
     'blue',
@@ -97,15 +101,11 @@ def palette():
         'static', filename=os.path.join('uploads', filename)
     ) if filename else None
 
-    color_list = []
-    colors = cg.extract(os.path.join(UPLOAD_FOLDER, filename), 16)
-    colors.sort(key=lambda c: c.hsl.h)
-    for color in colors:
-        r = color.rgb.r
-        g = color.rgb.g
-        b = color.rgb.b
-        new_color = (r, g, b)
-        color_list.append(new_color)
+    color_palette = generate_color_palette(
+        os.path.join(UPLOAD_FOLDER, filename)
+    )
+    colors = color_palette['colors']
+    color_list = color_palette['color_list']
 
     # Pass the filename and image URL to the template
     return render_template(
@@ -116,4 +116,39 @@ def palette():
         colors=colors,
         color_list=color_list,
         current_year=CURRENT_YEAR
+    )
+
+
+@app.route('/demo')
+def demo():
+    demo_images_path = os.path.join(
+        app.static_folder, 'images'
+    )
+
+    demo_images_length = dir_files_length(
+        demo_images_path
+    )
+
+    random_file_number = random.randint(1, demo_images_length)
+    random_file_name = f'demo-image-{random_file_number}.jpg'
+
+    image_url = os.path.join(
+        demo_images_path, random_file_name
+    )
+
+    color_palette = generate_color_palette(
+        image_url
+    )
+    colors = color_palette['colors']
+    color_list = color_palette['color_list']
+
+    return render_template(
+        'pages/palette.html',
+        theme=THEME,
+        image_url=image_url,
+        image_filename=random_file_name,
+        colors=colors,
+        color_list=color_list,
+        current_year=CURRENT_YEAR,
+        demo_page=True
     )
