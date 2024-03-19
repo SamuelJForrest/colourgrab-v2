@@ -129,6 +129,14 @@ def demo():
         demo_images_path
     )
 
+    if not demo_images_length:
+        flash(
+            "We don't have any demo images to show right now. " +
+            "Sorry for the inconvenience."
+        )
+
+        return redirect(url_for('home'))
+
     random_file_number = random.randint(1, demo_images_length)
     random_file_name = f'demo-image-{random_file_number}.jpg'
 
