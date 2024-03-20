@@ -25,7 +25,6 @@ COLOUR_MODIFIERS = [
     'orange',
     'purple',
     'pink',
-    'yellow'
 ]
 THEME = random.choice(COLOUR_MODIFIERS)
 
