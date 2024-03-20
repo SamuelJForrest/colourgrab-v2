@@ -5,7 +5,7 @@
         span {
             color: $color;
         }
-    
+
         &:hover,
         &:focus {
             color: $color;
@@ -32,7 +32,7 @@
         &.__upper {
             background: $colorTen;
         }
-        
+
         &.__lower {
             background: $colorSeventy;
         }
@@ -69,7 +69,10 @@
             background: none;
 
             span {
-                background-image: linear-gradient(transparent calc(100% - 2px), $color 2px);
+                background-image: linear-gradient(
+                    transparent calc(100% - 2px),
+                    $color 2px
+                );
             }
 
             i {
@@ -89,7 +92,7 @@
         }
 
         &-area {
-            box-shadow: inset 0 0 0 .5rem $color;
+            box-shadow: inset 0 0 0 0.5rem $color;
             background: $colorTen;
         }
 
@@ -120,6 +123,19 @@
                     i {
                         color: $color;
                     }
+                }
+            }
+        }
+
+        &-reset {
+            i {
+                color: $color;
+            }
+
+            &:hover,
+            &:focus {
+                i {
+                    color: darken($color, 15%);
                 }
             }
         }

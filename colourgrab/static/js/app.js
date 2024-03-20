@@ -233,22 +233,23 @@ var rgbPaletteButton = document.querySelector('.rgbPalette');
 var cssPaletteButton = document.querySelector('.cssPalette');
 var sassPaletteButton = document.querySelector('.sassPalette');
 var tailwindPaletteButton = document.querySelector('.tailwindPalette');
+var paletteResetButtin = document.querySelector('.paletteReset');
 var paletteString;
 var rgbOptions = {
-  'format': 'rgb'
+  format: 'rgb'
 };
 var cssOptions = {
-  'format': 'css',
-  'paletteStart': ':root {\n',
-  'paletteEnd': '}'
+  format: 'css',
+  paletteStart: ':root {\n',
+  paletteEnd: '}'
 };
 var sassOptions = {
-  'format': 'sass'
+  format: 'sass'
 };
 var tailwindOptions = {
-  'format': 'tailwind',
-  'paletteStart': 'module.exports = {\n\ttheme: {\n\t\tcolors: {\n',
-  'paletteEnd': '\t\t}\n\t}\n}'
+  format: 'tailwind',
+  paletteStart: 'module.exports = {\n\ttheme: {\n\t\tcolors: {\n',
+  paletteEnd: '\t\t}\n\t}\n}'
 };
 var allButtons = [rgbPaletteButton, cssPaletteButton, sassPaletteButton, tailwindPaletteButton];
 var allOptions = [rgbOptions, cssOptions, sassOptions, tailwindOptions];
@@ -271,7 +272,6 @@ var generatePalette = function generatePalette(options) {
     paletteString = '';
     return;
   }
-  ;
   var palette = '';
   var paletteStart = options.paletteStart,
     paletteEnd = options.paletteEnd,
@@ -308,14 +308,20 @@ var updatePaletteModal = function updatePaletteModal(format) {
   var modalText = document.querySelector('.palette-modal-text');
   if (!paletteString) {
     modalTitle.innerHTML = 'Oh no!';
-    modalText.innerHTML = 'It appears you don\'t have any colours selected. Please select colours from the list and try again.';
+    modalText.innerHTML = "It appears you don't have any colours selected. Please select colours from the list and try again.";
     _clipboard__WEBPACK_IMPORTED_MODULE_1__.copyButton.classList.add('d-none');
   } else {
-    var formattedStr = paletteString.replace(/\n/g, "<br>").replace(/\t/g, "&emsp;");
+    var formattedStr = paletteString.replace(/\n/g, '<br>').replace(/\t/g, '&emsp;');
     modalTitle.innerHTML = format;
     modalText.innerHTML = formattedStr;
     _clipboard__WEBPACK_IMPORTED_MODULE_1__.copyButton.classList.remove('d-none');
   }
+};
+var resetColourPalette = function resetColourPalette() {
+  var selectedColours = document.querySelectorAll('.palette-color[aria-pressed=true]');
+  selectedColours.forEach(function (colour) {
+    colour.setAttribute('aria-pressed', false);
+  });
 };
 if (colourPalettes.length > 0) {
   colourPalettes.forEach(function (palette) {
@@ -333,6 +339,9 @@ if (colourPalettes.length > 0) {
       updatePaletteModal(allOptions[i].format);
       (0,_a11y_dialog__WEBPACK_IMPORTED_MODULE_0__.openModal)();
     });
+  });
+  paletteResetButtin.addEventListener('click', function () {
+    resetColourPalette();
   });
 }
 

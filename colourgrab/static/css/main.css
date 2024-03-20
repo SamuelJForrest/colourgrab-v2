@@ -139,6 +139,12 @@ body.__blue .loader {
 body.__blue .palette-modal-close:hover i, body.__blue .palette-modal-close:focus i {
   color: #0EA5E9;
 }
+body.__blue .palette-reset i {
+  color: #0EA5E9;
+}
+body.__blue .palette-reset:hover i, body.__blue .palette-reset:focus i {
+  color: #0a72a1;
+}
 body.__blue .alerts-wrap {
   border-color: #0EA5E9;
 }
@@ -212,6 +218,12 @@ body.__green .loader {
 }
 body.__green .palette-modal-close:hover i, body.__green .palette-modal-close:focus i {
   color: #3CB35A;
+}
+body.__green .palette-reset i {
+  color: #3CB35A;
+}
+body.__green .palette-reset:hover i, body.__green .palette-reset:focus i {
+  color: #297a3d;
 }
 body.__green .alerts-wrap {
   border-color: #3CB35A;
@@ -287,6 +299,12 @@ body.__red .loader {
 body.__red .palette-modal-close:hover i, body.__red .palette-modal-close:focus i {
   color: #EF4444;
 }
+body.__red .palette-reset i {
+  color: #EF4444;
+}
+body.__red .palette-reset:hover i, body.__red .palette-reset:focus i {
+  color: #d41212;
+}
 body.__red .alerts-wrap {
   border-color: #EF4444;
 }
@@ -360,6 +378,12 @@ body.__orange .loader {
 }
 body.__orange .palette-modal-close:hover i, body.__orange .palette-modal-close:focus i {
   color: #F29559;
+}
+body.__orange .palette-reset i {
+  color: #F29559;
+}
+body.__orange .palette-reset:hover i, body.__orange .palette-reset:focus i {
+  color: #ec6812;
 }
 body.__orange .alerts-wrap {
   border-color: #F29559;
@@ -435,6 +459,12 @@ body.__purple .loader {
 body.__purple .palette-modal-close:hover i, body.__purple .palette-modal-close:focus i {
   color: #8860EF;
 }
+body.__purple .palette-reset i {
+  color: #8860EF;
+}
+body.__purple .palette-reset:hover i, body.__purple .palette-reset:focus i {
+  color: #541ae8;
+}
 body.__purple .alerts-wrap {
   border-color: #8860EF;
 }
@@ -509,6 +539,12 @@ body.__pink .loader {
 body.__pink .palette-modal-close:hover i, body.__pink .palette-modal-close:focus i {
   color: #F0D3F7;
 }
+body.__pink .palette-reset i {
+  color: #F0D3F7;
+}
+body.__pink .palette-reset:hover i, body.__pink .palette-reset:focus i {
+  color: #da92eb;
+}
 body.__pink .alerts-wrap {
   border-color: #F0D3F7;
 }
@@ -582,6 +618,12 @@ body.__yellow .loader {
 }
 body.__yellow .palette-modal-close:hover i, body.__yellow .palette-modal-close:focus i {
   color: #F6E35D;
+}
+body.__yellow .palette-reset i {
+  color: #F6E35D;
+}
+body.__yellow .palette-reset:hover i, body.__yellow .palette-reset:focus i {
+  color: #f2d615;
 }
 body.__yellow .alerts-wrap {
   border-color: #F6E35D;
@@ -927,6 +969,17 @@ p {
 .palette-button {
   padding: 1rem;
   font-size: 1.8rem;
+}
+.palette-reset {
+  cursor: pointer;
+  background: none;
+  border: none;
+  padding: 0;
+  margin-left: auto;
+}
+.palette-reset i {
+  font-size: 2.4rem;
+  transition: color 0.3s;
 }
 .palette-modal {
   position: fixed;

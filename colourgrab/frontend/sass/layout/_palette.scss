@@ -9,20 +9,20 @@
         img {
             @include util.aspect-ratio(1, 1);
             width: 100%;
-            border-radius: .8rem;
+            border-radius: 0.8rem;
             object-fit: cover;
         }
     }
 
     &-grid {
         width: 100%;
-        
+
         &-area {
             display: grid;
             grid-template-columns: repeat(6, 1fr);
             gap: 1.6rem;
             margin-top: 1.2rem;
-            
+
             @media (min-width: util.$lg) {
                 grid-template-columns: repeat(8, 1fr);
             }
@@ -36,7 +36,7 @@
         justify-content: flex-start;
         align-items: flex-start;
         height: 100%;
-        
+
         @media (min-width: util.$lg) {
             padding: 0 2.4rem;
             gap: 2.4rem;
@@ -46,10 +46,10 @@
     &-color {
         cursor: pointer;
         border: 1px solid rgba(util.$color-black, 0.25);
-        border-radius: .8rem;
+        border-radius: 0.8rem;
         width: 100%;
         aspect-ratio: 1;
-        transition: transform .3s;
+        transition: transform 0.3s;
 
         &[aria-pressed='true'] {
             i {
@@ -57,7 +57,7 @@
             }
         }
 
-        &.__blackicon {            
+        &.__blackicon {
             i::before {
                 color: util.$color-black;
             }
@@ -71,7 +71,7 @@
 
         &:hover,
         &:focus {
-            transform: translateY(-.4rem);
+            transform: translateY(-0.4rem);
         }
 
         i {
@@ -87,27 +87,27 @@
         display: flex;
         align-items: center;
         flex-wrap: wrap;
-        gap: .8rem;
-        margin-bottom: .8rem;
+        gap: 0.8rem;
+        margin-bottom: 0.8rem;
     }
-    
+
     &-title {
         @extend .h3;
     }
-    
+
     &-instructions {
         font-size: 1.2rem;
         color: rgba(util.$color-black, 0.8);
         transform: translateY(1.5px);
     }
-    
+
     &-buttons {
         margin-top: auto;
-        
+
         &-area {
             display: flex;
             flex-wrap: wrap;
-            gap: .8rem;
+            gap: 0.8rem;
             margin-top: 1.2rem;
         }
     }
@@ -116,6 +116,19 @@
         @extend .button;
         padding: 1rem;
         font-size: 1.8rem;
+    }
+
+    &-reset {
+        cursor: pointer;
+        background: none;
+        border: none;
+        padding: 0;
+        margin-left: auto;
+
+        i {
+            font-size: 2.4rem;
+            transition: color 0.3s;
+        }
     }
 
     &-modal {
@@ -127,11 +140,11 @@
         display: flex;
         justify-content: center;
         align-items: center;
-        
+
         &[aria-hidden='true'] {
             display: none;
         }
-        
+
         &-overlay {
             cursor: pointer;
             position: absolute;
@@ -147,7 +160,7 @@
             position: relative;
             background: util.$color-white;
             padding: 2.4rem;
-            border-radius: .8rem;
+            border-radius: 0.8rem;
             max-width: 95vw;
             width: 55rem;
         }
@@ -162,7 +175,7 @@
 
             i {
                 font-size: 2.4rem;
-                transition: color .3s;
+                transition: color 0.3s;
             }
         }
 
@@ -175,7 +188,7 @@
         &-text {
             background: rgba(util.$color-grey-120, 0.25);
             padding: 3.2rem 2.8rem;
-            border-radius: .8rem;
+            border-radius: 0.8rem;
             line-height: 1.6;
         }
 
