@@ -80,10 +80,10 @@ Congratulations, you are now set up!
 
 ### Libraries
 
--   [Jest]: for frontend testing.
+-   [Jest](https://jestjs.io/): for frontend testing.
 -   [a11y Dialog](https://a11y-dialog.netlify.app/): for accessible modal dialogs.
 -   [copy-to-clipboard](https://www.npmjs.com/package/copy-to-clipboard): for copying colour palettes to user's clipboard.
--   [Pytest]: for backend testing.
+-   [Pytest](https://docs.pytest.org/en/8.0.x/): for backend testing.
 -   [colorgram](https://pypi.org/project/colorgram.py/): this package is used to extract the colours from user uploaded images.
 
 ### Design
