@@ -1,6 +1,6 @@
 # ColourGrab
 
-![ColourGrab Cover Image](./docs/colourgrab-cover-image.gif)
+![ColourGrab Cover Image](./docs/images/colourgrab-cover-image.gif)
 
 ColourGrab is an app, built in Flask, that takes user uploaded images, extracts the colours from these images, and uses them to generate exportable colour palettes.
 
@@ -96,6 +96,8 @@ Congratulations, you are now set up!
 -   [Webpack](https://webpack.js.org/)
 
 ## Testing
+
+All documentation regarding testing can be found [here](/docs/testing/testing.md)
 
 ## Credits
 
