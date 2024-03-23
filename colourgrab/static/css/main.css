@@ -10450,3 +10450,8 @@ p {
     display: none !important;
   }
 }
+.container {
+  width: calc(100% - 30px);
+  padding-left: 15px;
+  padding-right: 15px;
+}

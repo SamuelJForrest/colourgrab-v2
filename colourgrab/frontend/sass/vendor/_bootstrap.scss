@@ -3,3 +3,10 @@
 
 // Import Bootstrap utilities
 @import '~bootstrap/scss/bootstrap-utilities';
+
+// Bootstrap overrides
+.container {
+    width: calc(100% - 30px);
+    padding-left: 15px;
+    padding-right: 15px;
+}
