@@ -38,6 +38,7 @@ Due to the nature of this site having multiple colour themes, I felt that it was
 
 | Colour | Contrast | Accessibility Level |
 | ------ | -------- | ------------------- |
+| Orange |
 |        |          |                     |
 
 #### Keyboard Navigation & Focus Order
