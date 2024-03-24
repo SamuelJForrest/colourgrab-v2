@@ -53,57 +53,59 @@ The colour contrasts were tested using [WebAIM's contrast checker](https://webai
 
 ##### Green
 
-| Case                                                  | Contrast | Normal Text Rating    | Large Text Rating     | Evidence                           |
-| ----------------------------------------------------- | -------- | --------------------- | --------------------- | ---------------------------------- |
-| `theme-colour` text on a white background             | 2.05:1   | AA (fail), AAA (fail) | AA (fail), AAA (fail) | [U+1F517](/docs/images/pink-1.png) |
-| `theme-colour` text on a `theme-colour-10` background | 1.96:1   | AA (fail), AAA (fail) | AA (fail), AAA (fail) | [U+1F517](/docs/images/pink-2.png) |
-| black text on a `theme-color-10` background           | 15.51:1  | AA (pass), AAA (pass) | AA (pass), AAA (pass) | [U+1F517](/docs/images/pink-3.png) |
-| white text on a `theme-color-70` background           | 1.64:1   | AA (fail), AAA (fail) | AA (fail), AAA (fail) | [U+1F517](/docs/images/pink-4.png) |
+| Case                                                  | Contrast | Normal Text Rating    | Large Text Rating     | Evidence                                             |
+| ----------------------------------------------------- | -------- | --------------------- | --------------------- | ---------------------------------------------------- |
+| `theme-colour` text on a white background             | 2.62:1   | AA (fail), AAA (fail) | AA (fail), AAA (fail) | [Evidence](/docs/images/colour_contrast/green-1.png) |
+| `theme-colour` text on a `theme-colour-10` background | 2.44:1   | AA (fail), AAA (fail) | AA (fail), AAA (fail) | [Evidence](/docs/images/colour_contrast/green-2.png) |
+| black text on a `theme-color-10` background           | 15.14:1  | AA (pass), AAA (pass) | AA (pass), AAA (pass) | [Evidence](/docs/images/colour_contrast/green-3.png) |
+| white text on a `theme-color-70` background           | 1.93:1   | AA (fail), AAA (fail) | AA (fail), AAA (fail) | [Evidence](/docs/images/colour_contrast/green-4.png) |
 
 ##### Blue
 
-| Case                                                  | Contrast | Accessibility Level |
-| ----------------------------------------------------- | -------- | ------------------- |
-| `theme-colour` text on a white background             |          |                     |
-| `theme-colour` text on a `theme-colour-10` background |          |                     |
-| black text on a `theme-color-10` background           |          |                     |
-| white text on a `theme-color-70` background           |          |                     |
+| Case                                                  | Contrast | Normal Text Rating    | Large Text Rating     | Evidence                                            |
+| ----------------------------------------------------- | -------- | --------------------- | --------------------- | --------------------------------------------------- |
+| `theme-colour` text on a white background             | 2.7:1    | AA (fail), AAA (fail) | AA (fail), AAA (fail) | [Evidence](/docs/images/colour_contrast/blue-1.png) |
+| `theme-colour` text on a `theme-colour-10` background | 2.5:1    | AA (fail), AAA (fail) | AA (fail), AAA (fail) | [Evidence](/docs/images/colour_contrast/blue-2.png) |
+| black text on a `theme-color-10` background           | 15.05:1  | AA (pass), AAA (pass) | AA (pass), AAA (pass) | [Evidence](/docs/images/colour_contrast/blue-3.png) |
+| white text on a `theme-color-70` background           | 2:1      | AA (fail), AAA (fail) | AA (fail), AAA (fail) | [Evidence](/docs/images/colour_contrast/blue-4.png) |
 
 ##### Red
 
-| Case                                                  | Contrast | Accessibility Level |
-| ----------------------------------------------------- | -------- | ------------------- |
-| `theme-colour` text on a white background             |          |                     |
-| `theme-colour` text on a `theme-colour-10` background |          |                     |
-| black text on a `theme-color-10` background           |          |                     |
-| white text on a `theme-color-70` background           |          |                     |
+| Case                                                  | Contrast | Normal Text Rating    | Large Text Rating     | Evidence                                           |
+| ----------------------------------------------------- | -------- | --------------------- | --------------------- | -------------------------------------------------- |
+| `theme-colour` text on a white background             | 3.66:1   | AA (fail), AAA (fail) | AA (pass), AAA (fail) | [Evidence](/docs/images/colour_contrast/red-1.png) |
+| `theme-colour` text on a `theme-colour-10` background | 3.29:1   | AA (fail), AAA (fail) | AA (pass), AAA (fail) | [Evidence](/docs/images/colour_contrast/red-2.png) |
+| black text on a `theme-color-10` background           | 14.59:1  | AA (pass), AAA (pass) | AA (pass), AAA (pass) | [Evidence](/docs/images/colour_contrast/red-3.png) |
+| white text on a `theme-color-70` background           | 2.55:1   | AA (fail), AAA (fail) | AA (fail), AAA (fail) | [Evidence](/docs/images/colour_contrast/red-4.png) |
 
 ##### Orange
 
-| Case                                                  | Contrast | Accessibility Level |
-| ----------------------------------------------------- | -------- | ------------------- |
-| `theme-colour` text on a white background             |          |                     |
-| `theme-colour` text on a `theme-colour-10` background |          |                     |
-| black text on a `theme-color-10` background           |          |                     |
-| white text on a `theme-color-70` background           |          |                     |
+| Case                                                  | Contrast | Normal Text Rating    | Large Text Rating     | Evidence                                              |
+| ----------------------------------------------------- | -------- | --------------------- | --------------------- | ----------------------------------------------------- |
+| `theme-colour` text on a white background             | 2.22:1   | AA (fail), AAA (fail) | AA (fail), AAA (fail) | [Evidence](/docs/images/colour_contrast/orange-1.png) |
+| `theme-colour` text on a `theme-colour-10` background | 2.1:1    | AA (fail), AAA (fail) | AA (fail), AAA (fail) | [Evidence](/docs/images/colour_contrast/orange-2.png) |
+| black text on a `theme-color-10` background           | 15.39:1  | AA (pass), AAA (pass) | AA (pass), AAA (pass) | [Evidence](/docs/images/colour_contrast/orange-3.png) |
+| white text on a `theme-color-70` background           | 1.72:1   | AA (fail), AAA (fail) | AA (fail), AAA (fail) | [Evidence](/docs/images/colour_contrast/orange-4.png) |
 
 ##### Purple
 
-| Case                                                  | Contrast | Accessibility Level |
-| ----------------------------------------------------- | -------- | ------------------- |
-| `theme-colour` text on a white background             |          |                     |
-| `theme-colour` text on a `theme-colour-10` background |          |                     |
-| black text on a `theme-color-10` background           |          |                     |
-| white text on a `theme-color-70` background           |          |                     |
+| Case                                                  | Contrast | Normal Text Rating    | Large Text Rating     | Evidence                                              |
+| ----------------------------------------------------- | -------- | --------------------- | --------------------- | ----------------------------------------------------- |
+| `theme-colour` text on a white background             | 4.12:1   | AA (fail), AAA (fail) | AA (pass), AAA (fail) | [Evidence](/docs/images/colour_contrast/purple-1.png) |
+| `theme-colour` text on a `theme-colour-10` background | 3.74:1   | AA (fail), AAA (fail) | AA (pass), AAA (fail) | [Evidence](/docs/images/colour_contrast/purple-2.png) |
+| black text on a `theme-color-10` background           | 14.74:1  | AA (pass), AAA (pass) | AA (pass), AAA (pass) | [Evidence](/docs/images/colour_contrast/purple-3.png) |
+| white text on a `theme-color-70` background           | 2.56:1   | AA (fail), AAA (fail) | AA (fail), AAA (fail) | [Evidence](/docs/images/colour_contrast/purple-4.png) |
 
 ##### Pink
 
-| Case                                                  | Contrast | Accessibility Level |
-| ----------------------------------------------------- | -------- | ------------------- |
-| `theme-colour` text on a white background             |          |                     |
-| `theme-colour` text on a `theme-colour-10` background |          |                     |
-| black text on a `theme-color-10` background           |          |                     |
-| white text on a `theme-color-70` background           |          |                     |
+| Case                                                  | Contrast | Normal Text Rating    | Large Text Rating     | Evidence                                            |
+| ----------------------------------------------------- | -------- | --------------------- | --------------------- | --------------------------------------------------- |
+| `theme-colour` text on a white background             | 2.05:1   | AA (fail), AAA (fail) | AA (fail), AAA (fail) | [Evidence](/docs/images/colour_contrast/pink-1.png) |
+| `theme-colour` text on a `theme-colour-10` background | 1.96:1   | AA (fail), AAA (fail) | AA (fail), AAA (fail) | [Evidence](/docs/images/colour_contrast/pink-2.png) |
+| black text on a `theme-color-10` background           | 15.51:1  | AA (pass), AAA (pass) | AA (pass), AAA (pass) | [Evidence](/docs/images/colour_contrast/pink-3.png) |
+| white text on a `theme-color-70` background           | 1.64:1   | AA (fail), AAA (fail) | AA (fail), AAA (fail) | [Evidence](/docs/images/colour_contrast/pink-4.png) |
+
+Following this initial accessibility audit, an [issue](https://github.com/SamuelJForrest/colourgrab-v2/issues/22) has been raised to rectify these accessibility issues.
 
 #### Keyboard Navigation & Focus Order
 
