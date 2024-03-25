@@ -109,4 +109,8 @@ Following this initial accessibility audit, an [issue](https://github.com/Samuel
 
 #### Keyboard Navigation & Focus Order
 
+For each of the routes - `home`, `palette` and `demo` - I tested navigating through each of these pages using a keyboard, to ensure that the focus order of elements were sensible. I have deemed each of these pages to have a sensible focus order.
+
+It is also worth noting here, that because the colour palette modal is built using [a11y Dialog](https://a11y-dialog.netlify.app/), the focus trap for the modal (not allowing a user to focus away from the modal until it is closed).
+
 ## Backend
