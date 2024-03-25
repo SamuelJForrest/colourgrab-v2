@@ -91,7 +91,7 @@ def palette():
     filename = session.get('uploaded_image')
 
     # If file doesn't exist, redirect user to homepage
-    if not os.path.isfile(os.path.join(UPLOAD_FOLDER, filename)):
+    if not session.get('uploaded_image'):
         flash('There has been an error. Please try again.')
         return redirect(url_for('home'))
 
