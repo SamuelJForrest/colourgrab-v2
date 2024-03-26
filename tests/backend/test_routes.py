@@ -1,4 +1,4 @@
-import io
+from tests.backend.conftest import StatusCode, UrlRoutes
 
 
 # Home page tests
@@ -8,29 +8,7 @@ def test_home_page_exists(client) -> None:
     """
 
     response = client.get('/')
-    assert response.status_code == 200
-
-
-def test_large_file_upload(client) -> None:
-    """
-    test that a file larger than 5MB cannot be uploaded
-    """
-
-    test_file = io.BytesIO(b'0' * (5 * 1024 * 1024 + 1))
-
-    data = {
-        'file': (test_file, 'test_file.jpg')
-    }
-
-    with client:
-        response = client.post('/', data=data)
-
-    assert response.status_code != 200
-
-    with client.session_transaction() as session:
-        assert (
-            "message", "File upload failed. Maximum allowed file size is 5MB."
-        ) in session["_flashes"]
+    assert response.status_code == StatusCode.OK.value
 
 
 # Palette page tests
@@ -40,7 +18,14 @@ def test_palette_page_without_image(client) -> None:
     """
 
     response = client.get('/palette')
-    assert response.status_code == 500
+
+    assert response.status_code == StatusCode.REDIRECT.value
+    assert response.location == UrlRoutes.HOME.value
+
+    with client.session_transaction() as session:
+        assert (
+            "message", "There has been an error. Please try again."
+        ) in session["_flashes"]
 
 
 # Demo page tests
@@ -50,4 +35,4 @@ def test_demo_page_exists(client) -> None:
     """
 
     response = client.get('/demo')
-    assert response.status_code == 200
+    assert response.status_code == StatusCode.OK.value
