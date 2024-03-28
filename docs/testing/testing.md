@@ -131,6 +131,7 @@ More detailed results for these tests can be found in the [.coverage file](https
 | `palette_page_with_existing_image`     | Tests that the palette page returns a 200 status code when users visit it with an `uploaded_image` in the session, and that the file referenced by `uploaded_image` actually exists | :white_check_mark: |
 | `palette_page_with_non_existent_image` | Test that the palette page redirects users to the home page, and displays a flash warning, if the image referenced by the `uploaded_image` session variable doesn't actually exist  | :white_check_mark: |
 | `demo_page_exists`                     | Tests that the demo page returns a 200 status code when users visit the demo url ('/demo')                                                                                          | :white_check_mark: |
+| `demo_page_with_no_image`              | Tests that the demo page redirects the user, and displays a flash message, if there aren't any demo images to show currently                                                        | :white_check_mark: |
 
 ### Uploads
 

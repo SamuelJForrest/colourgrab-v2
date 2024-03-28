@@ -88,5 +88,6 @@ def test_demo_page_with_no_image(client: FlaskClient, empty_static_image_dir) ->
     with client.session_transaction() as client_session:
         assert (
             "message",
-            "We don't have any demo images to show right now. Sorry for the inconvenience."
+            "We don't have any demo images to show right now. " +
+            "Sorry for the inconvenience."
         ) in client_session["_flashes"]
