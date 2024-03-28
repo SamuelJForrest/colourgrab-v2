@@ -23,6 +23,12 @@ class UrlRoutes(Enum):
 
 
 @pytest.fixture()
+def empty_static_image_dir(tmpdir):
+    app.static_folder = os.path.join(tmpdir, 'static')
+    os.makedirs(os.path.join(app.static_folder, 'images'))
+
+
+@pytest.fixture()
 def client():
     app.config.update({
         'SECRET_KEY': os.environ.get('SECRET_KEY')

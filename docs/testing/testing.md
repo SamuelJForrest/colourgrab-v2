@@ -114,3 +114,29 @@ For each of the routes - `home`, `palette` and `demo` - I tested navigating thro
 It is also worth noting here, that because the colour palette modal is built using [a11y Dialog](https://a11y-dialog.netlify.app/), the focus trap for the modal (not allowing a user to focus away from the modal until it is closed).
 
 ## Backend
+
+The backend testing for this application were written using [Pytest](https://docs.pytest.org/en/8.0.x/), and can found within the `tests/backend` directory. I have divided up the tests into the following categories, each with their own table:
+
+1. Routes: All tests within `test_routes.py` relate to navigating between the app's different URLS.
+2. Uploads: All tests within `test_uploads.py` relate to uploading different files through the main form.
+
+More detailed results for these tests can be found in the [.coverage file](https://github.com/SamuelJForrest/colourgrab-v2/blob/main/.coverage)
+
+### Routes
+
+| Test Name                              | Description                                                                                                                                                                         | Pass/Fail          |
+| -------------------------------------- | ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | ------------------ |
+| `home_page_exists`                     | Tests that a 200 status code is returned when a user attempts to visit the homepage url ('/')                                                                                       | :white_check_mark: |
+| `palette_page_without_image`           | Tests that the user is redirected to the homepage with a flash message if they try to visit the palette page ('/palette') with no `uploaded_image` in the session.                  | :white_check_mark: |
+| `palette_page_with_existing_image`     | Tests that the palette page returns a 200 status code when users visit it with an `uploaded_image` in the session, and that the file referenced by `uploaded_image` actually exists | :white_check_mark: |
+| `palette_page_with_non_existent_image` | Test that the palette page redirects users to the home page, and displays a flash warning, if the image referenced by the `uploaded_image` session variable doesn't actually exist  | :white_check_mark: |
+| `demo_page_exists`                     | Tests that the demo page returns a 200 status code when users visit the demo url ('/demo')                                                                                          | :white_check_mark: |
+
+### Uploads
+
+| Test Name                      | Description                                                                                                                                    | Pass/Fail          |
+| ------------------------------ | ---------------------------------------------------------------------------------------------------------------------------------------------- | ------------------ |
+| `allowed_file_upload`          | Tests that a file uploads successfully, and redirects the user to the palette page                                                             | :white_check_mark: |
+| `large_file_upload`            | Tests that a user is redirected to the homepage, and a flash message is shown, when a user tries to upload in image larger than 5MB            | :white_check_mark: |
+| `allowed_file_type_upload`     | Tests that files are uploaded successfully, and the user is redirected appropriately, if the file is the correct type (`.jpg`, `.png`, `.svg`) | :white_check_mark: |
+| `not_allowed_file_type_upload` | Tests that users are redirected to the homepage, with a flash message, when they attempt to upload a disallowed file type                      | :white_check_mark: |

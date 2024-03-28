@@ -73,3 +73,29 @@ def test_allowed_file_type_upload(client: FlaskClient, file_extension: list[str]
 
     assert response.status_code == StatusCode.REDIRECT.value
     assert response.location == UrlRoutes.PALETTE.value
+
+
+@pytest.mark.parametrize("file_extension", ['pdf', 'gif', 'doc', 'html', 'wav']) # noqa
+def test_not_allowed_file_type_upload(client: FlaskClient, file_extension: list[str]) -> None: # noqa
+    """
+    test that uploading incorrect file types will redirect the user
+    to the homepage and display a flash message
+    """
+
+    test_file = create_test_file(1)
+
+    data = {
+        'file-input': (test_file, f'test_file.{file_extension}')
+    }
+
+    with client:
+        response = client.post('/', data=data)
+
+    assert response.status_code == StatusCode.REDIRECT.value
+    assert response.location == UrlRoutes.HOME.value
+
+    with client.session_transaction() as session:
+        assert (
+            "message",
+            "Invalid file type. Please upload a .jpg, .png, or .svg file."
+        ) in session["_flashes"]
