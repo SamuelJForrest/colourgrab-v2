@@ -56,6 +56,27 @@ def test_large_file_upload(client: FlaskClient) -> None:
         ) in session["_flashes"]
 
 
+def test_session_overwrite(client: FlaskClient) -> None:
+    """
+    test that the session is cleared when a new image is uploaded
+    """
+
+    with client.session_transaction() as client_session:
+        client_session['uploaded_image'] = 'image_1.jpg'
+
+    test_file = create_test_file(1)
+
+    data = {
+        'file-input': (test_file, 'image_2.jpg')
+    }
+
+    with client:
+        client.post('/', data=data)
+
+    with client.session_transaction() as client_session:
+        assert client_session['uploaded_image'] != 'image_1.jpg'
+
+
 @pytest.mark.parametrize("file_extension", ALLOWED_EXTENSIONS)
 def test_allowed_file_type_upload(client: FlaskClient, file_extension: list[str]) -> None: # noqa
     """
