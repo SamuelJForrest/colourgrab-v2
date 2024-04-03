@@ -36,9 +36,9 @@ The following tests have been implemented using Jest:
 
 | Test                              | Description                                                                             | Pass/Fail          |
 | --------------------------------- | --------------------------------------------------------------------------------------- | ------------------ |
-| `closeAlerts function`            | Tests that alert wrapper is removed from the DOM when closeAlerts function is run       | :white_check_mark: |
+| `closeAlerts function`            | Tests that alert wrapper is removed from the DOM when `closeAlerts` function is run     | :white_check_mark: |
 | `Click alertsClose button`        | Tests that alert wrapper is removed from the DOM when `alertsClose` buttons are clicked | :white_check_mark: |
-| `Copy to Clipboard Functionality` | Tests that palettes are copied to clipboard when copy button is clicked                 | :white_check_mark: |
+| `Copy to Clipboard Functionality` | Tests that palettes are copied to clipboard when copy button (`copyButton`) is clicked  | :white_check_mark: |
 
 ### Accessibility
 
